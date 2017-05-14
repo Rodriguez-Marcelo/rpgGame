@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author creestian
  */
-public class Consumables {
+public class Consumables implements Serializable{
     private int quantity;
 
     public Consumables() {
@@ -27,8 +27,8 @@ public class Consumables {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 83 * hash + this.quantity;
+        int hash = 5;
+        hash = 37 * hash + this.quantity;
         return hash;
     }
 
@@ -54,6 +54,8 @@ public class Consumables {
     public String toString() {
         return "Consumables{" + "quantity=" + quantity + '}';
     }
+
+    
     
     
 }
