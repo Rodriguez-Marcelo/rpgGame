@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author creestian
  */
 public class Consumables implements Serializable{
+    
     private int quantity;
 
     public Consumables() {
