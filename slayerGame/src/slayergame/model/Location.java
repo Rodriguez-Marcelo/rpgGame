@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author creestian
  */
-public class Location {
+public class Location implements Serializable{
     private int positionX;
     private int positionY;
 
