@@ -83,7 +83,20 @@ public class DoorSphingeControl {
     /*CONE VOLUME - DOOR CALCULATIONS*/
     public double calcConeVol(double radiusVol, double heightVol) {
         
-        /*Perfect value   1047.1975511965 */
+        /*
+        - Cone limit - 
+        
+        input ok min 5
+        input ok max 15
+        input perfect 10
+        
+        
+        - total >= 130.7 ok
+        - total = 1047.1975511965 Perfect
+        - total <= 3534.3 ok
+        
+        */
+        
         
         double totalVol = (Math.PI * (Math.pow(radiusVol, 2)) * heightVol ) / 3;
         
