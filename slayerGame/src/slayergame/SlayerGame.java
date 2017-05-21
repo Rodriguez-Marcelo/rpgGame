@@ -111,17 +111,44 @@ public class SlayerGame {
         System.out.println(swordInfo);
         */
         
+        /*---------------------------------------------------------------------*/
+        
+        /*VALUE INPUT - CONE SURFACE AREA */
         System.out.println("Enter the radius:");
         double radius = inFile.nextDouble();
-        
         System.out.println("Enter the length:");
         double lenght = inFile.nextDouble();
         
+        /*FUNCTION CALLS - ANSWER DISPLAY - CONE SURFACE AREA*/
         double totalSA = doorSphingeControl.calcConeSA(radius, lenght);
-        
         int answerCode = doorSphingeControl.selectDoorAnswerCone(totalSA);
-        
         narrator.displayDoorAnswer(answerCode);
+  
+        /*---------------------------------------------------------------------*/
+        
+        /*VALUE INPUT - RECTANGLE PERIMETER */
+        System.out.println("Enter the lenght:");
+        int lengthCube = inFile.nextInt();
+        System.out.println("Enter the height:");
+        int height = inFile.nextInt();
+        
+        /*FUNCTION CALLS - ANSWER DISPLAY - RECTANGLE PERIMETER*/
+        int totalPer = doorSphingeControl.calcRectanglePer(height, lengthCube);
+        int answerCodeCube = doorSphingeControl.selectDoorAnswerRectangle(totalPer);
+        narrator.displayDoorAnswer(answerCodeCube);
+        
+        /*---------------------------------------------------------------------*/
+        
+        /*VALUE INPUT - CONE VOLUME */
+        System.out.println("Enter the radius:");
+        double radiusVol = inFile.nextInt();
+        System.out.println("Enter the height:");
+        double heightVol = inFile.nextInt();
+        
+        /*FUNCTION CALLS - ANSWER DISPLAY - CONE VOLUME*/
+        double totalVol = doorSphingeControl.calcConeVol(radiusVol, heightVol);
+        int answerCodeVol = doorSphingeControl.selectDoorAnswerVol(totalVol);
+        narrator.displayDoorAnswer(answerCodeVol);
         
     }
     
