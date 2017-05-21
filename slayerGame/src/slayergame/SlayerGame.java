@@ -5,6 +5,8 @@
  */
 package slayergame;
 
+import java.util.Scanner;
+import slayergame.control.DoorSphingeControl;
 import slayergame.model.Consumables;
 import slayergame.model.Door;
 import slayergame.model.Enemy;
@@ -15,6 +17,7 @@ import slayergame.model.NPC;
 import slayergame.model.Player;
 import slayergame.model.Room;
 import slayergame.model.Weapon;
+import slayergame.view.Narrator;
 
 /**
  *
@@ -26,7 +29,7 @@ public class SlayerGame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        /*
         Player playerOne = new Player();
         Consumables potion = new Consumables();
         Door woodDoor = new Door();
@@ -37,7 +40,15 @@ public class SlayerGame {
         NPC vendor = new NPC();
         Room kitchen = new Room();
         Weapon sword = new Weapon();
+        */
         
+        Narrator narrator = new Narrator();
+        DoorSphingeControl doorSphingeControl = new DoorSphingeControl();
+        Scanner inFile;
+        inFile = new Scanner(System.in);
+        
+        
+        /*
         potion.setQuantity(1);
         
         woodDoor.setSturdiness(4);
@@ -98,7 +109,19 @@ public class SlayerGame {
         
         String swordInfo = sword.toString();
         System.out.println(swordInfo);
+        */
         
+        System.out.println("Enter the radius:");
+        double radius = inFile.nextDouble();
+        
+        System.out.println("Enter the length:");
+        double lenght = inFile.nextDouble();
+        
+        double totalSA = doorSphingeControl.calcConeSA(radius, lenght);
+        
+        int answerCode = doorSphingeControl.selectDoorAnswerCone(totalSA);
+        
+        narrator.displayDoorAnswer(answerCode);
         
     }
     
