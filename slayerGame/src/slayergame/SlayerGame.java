@@ -114,6 +114,7 @@ public class SlayerGame {
         /*---------------------------------------------------------------------*/
         
         /*VALUE INPUT - CONE SURFACE AREA */
+        System.out.println("CALC CONE SA");
         System.out.println("Enter the radius:");
         double radius = inFile.nextDouble();
         System.out.println("Enter the length:");
@@ -127,6 +128,7 @@ public class SlayerGame {
         /*---------------------------------------------------------------------*/
         
         /*VALUE INPUT - RECTANGLE PERIMETER */
+        System.out.println("CALC RECTANGLE PERIMETER");
         System.out.println("Enter the lenght:");
         int lengthCube = inFile.nextInt();
         System.out.println("Enter the height:");
@@ -140,6 +142,7 @@ public class SlayerGame {
         /*---------------------------------------------------------------------*/
         
         /*VALUE INPUT - CONE VOLUME */
+        System.out.println("CALC CONE VOLUME");
         System.out.println("Enter the radius:");
         double radiusVol = inFile.nextInt();
         System.out.println("Enter the height:");

@@ -25,8 +25,10 @@ public class DoorSphingeControl {
         
         */
         
-        double totalSA = ( Math.PI * radius * 2 ) + (Math.PI * radius * length);
         
+        
+        double totalSA = ( Math.PI * radius * 2 ) + (Math.PI * radius * length);
+        totalSA = Math.round( totalSA * 100.0 ) / 100.0;
         return totalSA;
     }
     public int selectDoorAnswerCone (double totalSA){
@@ -99,7 +101,7 @@ public class DoorSphingeControl {
         
         
         double totalVol = (Math.PI * (Math.pow(radiusVol, 2)) * heightVol ) / 3;
-        
+        totalVol = Math.round( totalVol * 100.0 ) / 100.0;
         return totalVol;
     } 
     public int selectDoorAnswerVol (double totalVol){
