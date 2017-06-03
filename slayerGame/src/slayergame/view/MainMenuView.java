@@ -17,15 +17,15 @@ public class MainMenuView {
 
         public MainMenuView() {
         this.menu = "\n"
-                + "\n_____________________________________"
-                + "\n1            Main Menu              1 "
-                + "\n-------------------------------------"
-                + "\n N - New Game"
-                + "\n S - Save Game"
-                + "\n L - Load Game"
-                + "\n H - How to play"
-                + "\n E - Exit"
-                + "\n_____________________________________";
+                + "\n+-----------------------------------+"
+                + "\n|             Main Menu             |"
+                + "\n+-----------------------------------+"
+                + "\n|            N - New Game           |"
+                + "\n|            S - Save Game          |"
+                + "\n|            L - Load Game          |"
+                + "\n|            H - How to play        |"
+                + "\n|            E - Exit               |"
+                + "\n+-----------------------------------+";
     }
 
     
