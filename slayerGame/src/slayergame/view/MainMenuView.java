@@ -124,7 +124,16 @@ public class MainMenuView {
                 + "\n| anything you managed to scavenge while escaping  |"
                 + "\n| whatever it is hunting you at the time.          |"
                 + "\n+--------------------------------------------------+");
-        this.getMenuOption();
+        boolean done = false;
+        do {
+            String menuOption = this.getMenuOption();
+            if (menuOption.toUpperCase().equals("Q"))
+                return;
+            
+            done = this.doAction(menuOption);
+            
+        } while (!done);
+        
         }
     
 }
