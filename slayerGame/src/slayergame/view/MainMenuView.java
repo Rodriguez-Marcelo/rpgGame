@@ -6,6 +6,7 @@
 package slayergame.view;
 
 import java.util.Scanner;
+import slayergame.SlayerGame;
 
 /**
  *
@@ -94,7 +95,11 @@ public class MainMenuView {
     }
 
     private void startNewGame() {
-        System.out.println("\n *** startNewGame() function called ***");
+        
+        GameControl.createNewGame(SlayerGame.getPlayer());
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
     private void saveGame() {
