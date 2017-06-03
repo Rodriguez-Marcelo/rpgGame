@@ -36,11 +36,6 @@ public class SlayerGame {
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
         
-        MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMainMenuView();
-        mainMenuView.doAction(mainMenuView.getMenuOption());
-       
-        
     }
 
     public static Game getCurrentGame() {
