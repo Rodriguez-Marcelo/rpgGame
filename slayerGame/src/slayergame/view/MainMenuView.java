@@ -134,6 +134,6 @@ public class MainMenuView {
             
         } while (!done);
         
-        }
+    }
     
 }
