@@ -8,6 +8,7 @@ package slayergame.view;
 import java.util.Scanner;
 import slayergame.SlayerGame;
 import slayergame.control.GameControl;
+import slayergame.view.GameMenuView;
 
 /**
  *
@@ -74,13 +75,13 @@ public class MainMenuView {
         
         switch (choice) {
             case "N":
-                this.startNewGame();
+                GameControl.createNewGame(SlayerGame.getPlayer());
                 break;
             case "S":
-                this.saveGame();
+                GameControl.saveGame(SlayerGame.getPlayer());
                 break;
             case "L":
-                this.loadSavedGame();
+                GameControl.loadSavedGame(SlayerGame.getPlayer());
                 break;
             case "H":
                 this.displayHelpMenu();
@@ -123,6 +124,7 @@ public class MainMenuView {
                 + "\n| anything you managed to scavenge while escaping  |"
                 + "\n| whatever it is hunting you at the time.          |"
                 + "\n+--------------------------------------------------+");
-                }
+        this.getMenuOption();
+        }
     
 }

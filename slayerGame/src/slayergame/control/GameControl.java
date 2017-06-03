@@ -29,8 +29,19 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-        
         System.out.println("\n *** createNewGame() function is called ***");
     
+    }
+
+    public static void startNewGame(Player player) {
+        System.out.println("\n *** startNewGame() function is called ***");
+    }
+
+    public static void saveGame(Player player) {
+        System.out.println("\n *** saveGame() function is called ***");
+    }
+
+    public static void loadSavedGame(Player player) {
+        System.out.println("\n *** loadSavedGame() function is called ***");
     }
 }
