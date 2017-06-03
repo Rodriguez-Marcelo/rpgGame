@@ -24,22 +24,23 @@ public class StartProgramView {
 
     private void displayBanner() {
         System.out.println(
-                  "\n******************************"
-                + "\n* S    L    A    Y    E   R  *"
-                + "\n*                            *"
-                + "\n* Prepare to enter a world   *"
-                + "\n* shaped by your own choices *"
-                + "\n* full of dangers and risks  *"
-                + "\n* at every corner, behind    *"
-                + "\n* every door.                *"
-                + "\n* As you venture through the *"
-                + "\n* world of Kchimera, don't   *"
-                + "\n* forget that only courage,  *"
-                + "\n* strength, and wit will get *"
-                + "\n* you alive untill the end.  *"
-                + "\n*                            *"
-                + "\n*       - HAVE FUN! -        *"
-                + "\n******************************");
+                  "\n+-----------------------------+"
+                + "\n|    S   L   A   Y   E   R    |"
+                + "\n|    =====================    |"
+                + "\n|  Prepare to enter a world   |"
+                + "\n|  shaped by your own         |"
+                + "\n|  choices full of dangers    |"
+                + "\n|  and risks at every corner  |"
+                + "\n|  behind every door.         |"
+                + "\n|  As you venture through     |"
+                + "\n|  the world of Kchimera,     |"
+                + "\n|  don't forget that only     |"
+                + "\n|  courage, strength, and     |"
+                + "\n|  wit will get you alive     |"
+                + "\n|  untill the end.            |"
+                + "\n|                             |"
+                + "\n|       - HAVE FUN! -         |"
+                + "\n+-----------------------------+");
     }
 
     public void displayStartProgramView() {
