@@ -97,7 +97,7 @@ public class StartProgramView {
             return false;
         }
         
-        this.displayNextView();
+        this.displayNextView(player);
         
         return true;
     }
@@ -106,7 +106,11 @@ public class StartProgramView {
         System.out.println("\n============================================"
                          + "\n Welcome to the wolrd of Kchymera, " + player.getName()
                          + "\n Take care, and carefull where you step!"
-                         + "\n============================================");
+                         + "\n============================================"
+                         );
+        MainMenuView mainMenuView = new MainMenuView();
+                
+        mainMenuView.displayMainMenuView();
     }
     
     
