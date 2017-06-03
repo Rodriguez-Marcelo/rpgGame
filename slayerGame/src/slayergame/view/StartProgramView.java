@@ -54,7 +54,7 @@ public class StartProgramView {
             
         } while (!done);
         
-        System.out.println("\n *** displayStartProgram() function called ***");
+        /*System.out.println("\n *** displayStartProgram() function called ***");*/
     }
 
     private String getPlayersName() {

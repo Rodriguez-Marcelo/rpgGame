@@ -108,5 +108,5 @@ public class MainMenuView {
     private void displayHelpMenu() {
         System.out.println("\n *** displayHelpMenu() function called ***");
     }
-    
+  
 }

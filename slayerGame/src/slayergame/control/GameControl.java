@@ -27,17 +27,4 @@ public class GameControl {
         
         return player;
     }
-    /*
-    public static void startNewGame(){
-        System.out.println("\n *** startNewGame() function called ***");
-    }
-    
-    public static void saveGame(){
-        System.out.println("\n *** saveGame() function called ***");
-    }
-    
-    public static void loadSavedGame() {
-        System.out.println("\n *** loadSavedGame() function called ***");
-    }
-    */
 }
