@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package slayergame.view;
+package slayergame.model;
 
 /**
  *
  * @author Chicho
  */
-public class MainMenu {
+public class Game {
     
 }
