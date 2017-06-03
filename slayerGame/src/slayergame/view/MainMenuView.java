@@ -7,6 +7,7 @@ package slayergame.view;
 
 import java.util.Scanner;
 import slayergame.SlayerGame;
+import slayergame.control.GameControl;
 
 /**
  *
@@ -111,7 +112,14 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-        System.out.println("\n *** displayHelpMenu() function called ***");
-    }
-  
+        System.out.println("\nThe main goal of the game is for you"
+                + "\nto survive all the obstacles and puzzles thrown  "
+                + "\nat you by the natural or artificial vicisitudes  "
+                + "\nof Kchymera's environments. Choices will be your "
+                + "\nmain tool. When coming across with specific      "
+                + "\nscenarios, you'll be able to check your inventory"
+                + "\nand use whatever you managed to scavenge while   "
+                + "escaping whatever it is it's hunting you at the time.");
+                }
+    
 }
