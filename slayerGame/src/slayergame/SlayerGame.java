@@ -18,6 +18,7 @@ import slayergame.model.NPC;
 import slayergame.model.Player;
 import slayergame.model.Room;
 import slayergame.model.Weapon;
+import slayergame.view.MainMenuView;
 import slayergame.view.Narrator;
 import slayergame.view.StartProgramView;
 
@@ -34,6 +35,10 @@ public class SlayerGame {
         
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
+        
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.displayMainMenuView();
+        mainMenuView.doAction(mainMenuView.getMenuOption());
        
         
     }
