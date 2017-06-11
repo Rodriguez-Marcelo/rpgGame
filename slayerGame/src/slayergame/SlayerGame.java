@@ -7,6 +7,7 @@ package slayergame;
 
 import java.util.Scanner;
 import slayergame.control.DoorSphingeControl;
+import slayergame.control.MovementControl;
 import slayergame.model.Consumables;
 import slayergame.model.Door;
 import slayergame.model.Enemy;
@@ -21,6 +22,7 @@ import slayergame.model.Weapon;
 import slayergame.view.MainMenuView;
 import slayergame.view.Narrator;
 import slayergame.view.StartProgramView;
+import slayergame.view.MoveToView;
 
 /**
  *
