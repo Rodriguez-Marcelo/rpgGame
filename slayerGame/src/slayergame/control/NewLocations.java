@@ -13,7 +13,17 @@ import slayergame.model.Player;
  * @author Chicho
  */
 public class NewLocations {
-
+    
+    private int scenarioNumber;
+    private String description;
+    private String locationName;
+    private String choice1;
+    private String choice2;
+    private String choice3;
+    private String choice4;
+    private String choice5;
+    
+   
     public static void moveToPathA(Player player) {
         System.out.println("\n *** moveToPathA() function is called ***");
     }
