@@ -19,11 +19,6 @@ public class LocationView {
     }
     
     public void displayScenario(int currentLocation){
-        NewLocations scenario = new NewLocations();
-        
-        System.out.println(scenario.displayScenario());
-            
-                
         
         }
         

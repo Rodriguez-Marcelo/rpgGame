@@ -43,11 +43,7 @@ public class SlayerGame {
         InventoryControl inventoryControl = new InventoryControl();
         LocationView locationView = new LocationView();
         NewLocations scenario = new NewLocations();
-        
-        /*
-        
-        
-        */
+
         
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();

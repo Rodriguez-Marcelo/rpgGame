@@ -5,9 +5,11 @@
  */
 package slayergame.control;
 
+import java.util.Scanner;
 import slayergame.SlayerGame;
 import slayergame.model.Player;
 import slayergame.view.LocationView;
+import slayergame.view.Narrator;
 
 /**
  *
@@ -31,10 +33,23 @@ public class GameControl {
 
     public static void createNewGame(Player player) {
         
-        LocationView locationView = new LocationView();
-        locationView.displayScenario(player.getCurrentLocation());
+        //Here I create a locationView object, wich will display
+        //where the user is and what are his options.
+        ScenarioGenerator scenario = new ScenarioGenerator();
+        scenario.generateScenario(player.getCurrentLocation());
         
-    
+        Narrator narrator = new Narrator();
+        
+        for (int i = 0; i < 30; i++){
+            narrator.displayScenario(scenario);
+            int choice = narrator.getMenuOption();
+
+            MovementControl movementControler = new MovementControl();
+            player.setCurrentLocation(movementControler.moveToScenario(player.getCurrentLocation(), choice));
+
+            scenario.generateScenario(player.getCurrentLocation());
+        }
+        
     }
 
     public static void startNewGame(Player player) {
@@ -48,4 +63,6 @@ public class GameControl {
     public static void loadSavedGame(Player player) {
         System.out.println("\n *** loadSavedGame() function is called ***");
     }
+
+    
 }

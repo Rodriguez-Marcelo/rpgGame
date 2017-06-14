@@ -5,24 +5,71 @@
  */
 package slayergame.view;
 
+import java.util.Scanner;
+import slayergame.SlayerGame;
+import slayergame.control.GameControl;
+import slayergame.control.ScenarioGenerator;
+
 /**
  *
  * @author Chicho
  */
 public class Narrator {
     
-    public void displayDoorAnswer (int code){
+    public void displayScenario (ScenarioGenerator scenario1){
         
-        if (code == 0){
-            /*PERFECT*/
-            System.out.println("PERFECT SCORE, have this awesome sword");
-        } else if (code == 1){
-            /*OK*/
-            System.out.println("Nice, you were close enough...");
-        } else /*ERROR*/ System.out.println("Nope. Do it again.");
+        String locationName = scenario1.getLocationName();
+        String scenarioDesc = scenario1.getDescription();
+        String scenarioChoices = scenario1.getChoices();
         
+        System.out.println( locationName + "\n\n" + scenarioDesc + "\n\n"
+                            + scenarioChoices );
         
     }
     
+    public int getMenuOption() {
+        
+        Scanner keyboard = new Scanner(System.in);
+        int value = 0;
+        boolean valid = false;
+        
+        while (!valid) {
+            
+            value = keyboard.nextInt();
+            
+            if (value < 1) {
+                System.out.println("\nInvalid value! Please choose a path...");
+                continue;
+            }
+            
+            break;
+        }
+        
+        return value;
+    }
+
+    public boolean doAction(int choice) {
+        
+        switch (choice) {
+            case 1:
+                GameControl.createNewGame(SlayerGame.getPlayer());
+                break;
+            case 2:
+                GameControl.saveGame(SlayerGame.getPlayer());
+                break;
+            case 3:
+                GameControl.loadSavedGame(SlayerGame.getPlayer());
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            default:
+                System.out.println("\n*** Invalid selection, please try again ***");
+        }
+        
+        
+        return true;
+    }
     
 }

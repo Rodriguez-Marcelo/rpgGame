@@ -5,57 +5,20 @@
  */
 package slayergame.control;
 
-import java.io.Serializable;
+import java.util.Scanner;
 import slayergame.SlayerGame;
-import slayergame.model.Player;
 
 /**
  *
  * @author Chicho
  */
-public class NewLocations implements Serializable{
+public class ScenarioGenerator {
+
+    private String description;
+    private String locationName;
+    private int scenarioNumber;
+    private String choices;
     
-    private int scenarioNumber = 0;
-    private String description = "";
-    private String locationName = "";
-    private String choices = "";
-   
-    
-    public NewLocations() {
-
-    }
-
-    public int getScenarioNumber() {
-        return scenarioNumber;
-    }
-
-    public void setScenarioNumber(int scenarioNumber) {
-        this.scenarioNumber = scenarioNumber;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getLocationName() {
-        return locationName;
-    }
-
-    public void setLocationName(String locationName) {
-        this.locationName = locationName;
-    }
-
-    public String getChoices() {
-        return choices;
-    }
-
-    public void setChoices(String choices) {
-        this.choices = choices;
-    }
     
     public void generateScenario(int currentLocation){
         
@@ -112,10 +75,39 @@ public class NewLocations implements Serializable{
                 break;   
         }
     }
-    
-    public String displayScenario(){
-        String allAttributes = (this.locationName + "\n\n" + this.description + 
-                                "\n\n" + this.choices);
-        return allAttributes;
+
+    public String getDescription() {
+        return description;
     }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getLocationName() {
+        return locationName;
+    }
+
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
+    }
+
+    public int getScenarioNumber() {
+        return scenarioNumber;
+    }
+
+    public void setScenarioNumber(int scenarioNumber) {
+        this.scenarioNumber = scenarioNumber;
+    }
+
+    public String getChoices() {
+        return choices;
+    }
+
+    public void setChoices(String choices) {
+        this.choices = choices;
+    }
+    
+    
+    
 }
