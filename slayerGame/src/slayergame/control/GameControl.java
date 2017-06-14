@@ -7,6 +7,7 @@ package slayergame.control;
 
 import slayergame.SlayerGame;
 import slayergame.model.Player;
+import slayergame.view.LocationView;
 
 /**
  *
@@ -30,7 +31,8 @@ public class GameControl {
 
     public static void createNewGame(Player player) {
         
-        
+        LocationView locationView = new LocationView();
+        locationView.displayScenario(player.getCurrentLocation());
         
     
     }

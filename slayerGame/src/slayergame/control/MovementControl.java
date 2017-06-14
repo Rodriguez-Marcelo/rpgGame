@@ -5,10 +5,23 @@
  */
 package slayergame.control;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Chicho
  */
-public class MovementControl {
+public class MovementControl implements Serializable{
+    
+    private int scenarioLocation = 0;
+
+    public int getScenarioLocation() {
+        return scenarioLocation;
+    }
+
+    public void setScenarioLocation(int scenarioLocation) {
+        this.scenarioLocation = scenarioLocation;
+    }
+    
     
 }

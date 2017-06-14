@@ -15,11 +15,12 @@ import java.util.Objects;
 public class Player implements Serializable{
     
     private String name;
-    private int health;
-    private int mana;
-    private int strength;
+    private Inventory inventory;
+    private int currentLocation;
+    
 
     public Player() {
+        this.currentLocation = 1;
     }
 
     public String getName() {
@@ -30,71 +31,22 @@ public class Player implements Serializable{
         this.name = name;
     }
 
-    public int getHealth() {
-        return health;
+    public Inventory getInventory() {
+        return inventory;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
     }
 
-    public int getMana() {
-        return mana;
+    public int getCurrentLocation() {
+        return currentLocation;
     }
 
-    public void setMana(int mana) {
-        this.mana = mana;
+    public void setCurrentLocation(int currentLocation) {
+        this.currentLocation = currentLocation;
     }
 
-    public int getStrength() {
-        return strength;
-    }
-
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 29 * hash + Objects.hashCode(this.name);
-        hash = 29 * hash + this.health;
-        hash = 29 * hash + this.mana;
-        hash = 29 * hash + this.strength;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Player other = (Player) obj;
-        if (this.health != other.health) {
-            return false;
-        }
-        if (this.mana != other.mana) {
-            return false;
-        }
-        if (this.strength != other.strength) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Player{" + "name=" + name + ", health=" + health + ", mana=" + mana + ", strength=" + strength + '}';
-    }
     
     
 }
