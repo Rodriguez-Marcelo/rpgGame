@@ -63,12 +63,28 @@ public class ScenarioGenerator {
                 + "\nsecurity guard. You also get to hear screams just across the"
                 + "\ngloomy hallway. Silent alarms still on, red lights flashing "
                 + "\nand circling all over the place, you see");
-                this.locationName=("Hallway in full alarm");
+                this.locationName=("\nHallway in full alarm");
                 this.scenarioNumber=(2);
                 this.choices=("\n1 - Go through stair case up"
                 + "\n2 - Help trapped scientist"
                 + "\n3 - Enter elevator"
                 + "\n4 - Check security guard body"
+                + "\n5 - Go through stair case down");
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                this.description = ("\nDescription Scenario 6");
+                this.locationName=("\nInside Security Elevator");
+                this.scenarioNumber=(3);
+                this.choices=("\n1 - Go to the Roof"
+                + "\n2 - Try to repair Sentry Gun"
+                + "\n3 - Go to Main Lobby"
+                + "\n4 - Open metal case"
                 + "\n5 - Go through stair case down");
                 break;
             default: 

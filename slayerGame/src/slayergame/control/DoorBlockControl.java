@@ -11,4 +11,6 @@ package slayergame.control;
  */
 public class DoorBlockControl {
     
+    
+    
 }

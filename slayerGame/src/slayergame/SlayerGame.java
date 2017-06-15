@@ -10,7 +10,6 @@ import slayergame.control.DoorSphingeControl;
 import slayergame.control.GameControl;
 import slayergame.control.InventoryControl;
 import slayergame.control.MovementControl;
-import slayergame.control.NewLocations;
 import slayergame.model.Consumables;
 import slayergame.model.Door;
 import slayergame.model.DoorBlocker;
@@ -22,7 +21,6 @@ import slayergame.model.NPC;
 import slayergame.model.Player;
 import slayergame.model.Room;
 import slayergame.model.Weapon;
-import slayergame.view.LocationView;
 import slayergame.view.MainMenuView;
 import slayergame.view.Narrator;
 import slayergame.view.StartProgramView;
@@ -41,8 +39,6 @@ public class SlayerGame {
         
         GameControl gameControl = new GameControl();
         InventoryControl inventoryControl = new InventoryControl();
-        LocationView locationView = new LocationView();
-        NewLocations scenario = new NewLocations();
 
         
         StartProgramView startProgramView = new StartProgramView();
