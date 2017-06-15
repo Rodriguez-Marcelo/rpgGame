@@ -54,7 +54,7 @@ public class MovementControl implements Serializable{
                         break;
                     case 3:
                         double radius = 0.0;
-                        double length = 0.0;
+                        double height = 0.0;
                         DoorBlockView doorBlockView = new DoorBlockView();
                         DoorBlockControl doorBlockControl = new DoorBlockControl();
                         
@@ -68,10 +68,10 @@ public class MovementControl implements Serializable{
                             + "\nBelow these input boxes, you have a keypad...");
                         System.out.println("Enter the radius:");
                         radius = doorBlockView.getInput1();
-                        System.out.println("Enter the length:");
-                        length = doorBlockView.getInput2();
+                        System.out.println("Enter the height:");
+                        height = doorBlockView.getInput2();
                         
-                        double totalSA = doorBlockControl.coneKeyCalc(radius, length);
+                        double totalSA = doorBlockControl.calcConeKey(radius, height);
                         
                         doorBlockControl.selectDoorAnswerCone(totalSA);
                         

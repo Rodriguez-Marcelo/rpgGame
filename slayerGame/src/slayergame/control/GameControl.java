@@ -35,7 +35,6 @@ public class GameControl {
         //where the user is and what are his options.
         ScenarioGenerator scenario = new ScenarioGenerator();
         scenario.generateScenario(player.getCurrentLocation());
-        DoorBlockControl doorBlocker = new DoorBlockControl();
         
         Narrator narrator = new Narrator();
         
@@ -47,10 +46,7 @@ public class GameControl {
             player.setCurrentLocation(movementControler.moveToScenario(player.getCurrentLocation(), choice));
 
             scenario.generateScenario(player.getCurrentLocation());
-            
-            
         }
-        
     }
 
     public static void saveGame(Player player) {

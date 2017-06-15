@@ -15,7 +15,7 @@ public class DoorBlockControl {
     public String input1 = "";
     public String input2 = "";
     
-    public double coneKeyCalc (double radius, double length){
+    public double calcConeKey (double radius, double height){
         
         /*
         - Parameter limit - 
@@ -26,28 +26,31 @@ public class DoorBlockControl {
         
         
         - total >= 109.8 ok
-        - total = 376.9911184307752 PERFECT
+        - total = 758.45 PERFECT
         - total <=  801.2 ok
         
         */
         
         
                             
-        
-        double totalSA = ( Math.PI * radius * 2 ) + (Math.PI * radius * length);
+        //PI * R ( R + SQ(R^2 + h^2))
+        double totalSA = Math.PI * radius * ( radius + Math.sqrt(Math.pow(radius, 2) + Math.pow(height, 2) ) );
         totalSA = Math.round( totalSA * 100.0 ) / 100.0;
         return totalSA;
     }
     public int selectDoorAnswerCone (double totalSA){
-        int code = 0;
         
-        
-        if (totalSA == 376.9911184307752){
-            /*PERFECT*/
-            code = 0;
-        } else if (totalSA <= 801.2 && totalSA >= 109.8){
+        int code;
+
+        if (totalSA >= 68.26 && totalSA < 189.61){
             /*OK*/
             code = 1;
+        } else if (totalSA > 189.61 && totalSA <= 485.41){
+            /*OK*/
+            code = 1;
+        } else if (totalSA == 189.61){
+            /*PERFECT*/
+            code = 0;
         } else code = 2; /*ERROR*/
         
         return code;
