@@ -4,15 +4,11 @@
  * and open the template in the editor.
  */
 package slayergame.control;
-
 import slayergame.SlayerGame;
 import slayergame.model.Player;
 import slayergame.view.Narrator;
 
-/**
- *
- * @author Chicho
- */
+/** @author Chicho and Cristian */
 public class GameControl {
 
     public static Player createPlayer(String name) {
