@@ -66,15 +66,21 @@ public class MovementControl implements Serializable{
                             + "\nYou stare at the screen of the 3D Printer, and"
                             + "\nsee two input values: radius & length "
                             + "\nBelow these input boxes, you have a keypad...");
-                        System.out.println("Enter the radius:");
-                        radius = doorBlockView.getInput1();
-                        System.out.println("Enter the height:");
-                        height = doorBlockView.getInput2();
+                        boolean openDoor = false;
+                        do{
+                            
+                            System.out.println("Enter the radius:");
+                            radius = doorBlockView.getInput1();
+                            System.out.println("Enter the height:");
+                            height = doorBlockView.getInput2();
                         
-                        double totalSA = doorBlockControl.calcConeKey(radius, height);
+                            double totalSA = doorBlockControl.calcConeKey(radius, height);
                         
-                        doorBlockControl.selectDoorAnswerCone(totalSA);
-                        
+                            openDoor=doorBlockControl.selectDoorAnswerCone(totalSA);
+                        }while(!openDoor);
+                            
+                            
+                            
                         
                                 
                         futureLocation = 6;

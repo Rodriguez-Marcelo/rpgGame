@@ -34,12 +34,8 @@ public class SlayerGame {
     private static Player player = null;
     
     public static void main(String[] args) {
-        
-        
-        
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
-        
     }
 
     public static Game getCurrentGame() {
