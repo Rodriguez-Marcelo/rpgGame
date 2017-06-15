@@ -5,7 +5,6 @@
  */
 package slayergame.control;
 
-import java.util.Scanner;
 import slayergame.SlayerGame;
 import slayergame.model.Player;
 import slayergame.view.Narrator;
