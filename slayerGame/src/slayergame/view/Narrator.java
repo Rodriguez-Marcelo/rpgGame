@@ -10,10 +10,7 @@ import slayergame.SlayerGame;
 import slayergame.control.GameControl;
 import slayergame.control.ScenarioGenerator;
 
-/**
- *
- * @author Chicho
- */
+/** Chicho & Cristian **/
 public class Narrator {
     
     public void displayScenario (ScenarioGenerator scenario1){
