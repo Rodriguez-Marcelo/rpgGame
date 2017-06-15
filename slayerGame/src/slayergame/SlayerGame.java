@@ -6,7 +6,6 @@
 package slayergame;
 
 import java.util.Scanner;
-import slayergame.control.DoorBlockControl;
 import slayergame.control.GameControl;
 import slayergame.control.InventoryControl;
 import slayergame.control.MovementControl;
@@ -24,7 +23,6 @@ import slayergame.model.Weapon;
 import slayergame.view.MainMenuView;
 import slayergame.view.Narrator;
 import slayergame.view.StartProgramView;
-import slayergame.view.MoveToView;
 
 /**
  *
@@ -37,13 +35,11 @@ public class SlayerGame {
     
     public static void main(String[] args) {
         
-        DoorBlockControl door = new DoorBlockControl();
-        System.out.println(door.calcConeKey(4, 18));
         
-        /*
+        
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
-        */
+        
     }
 
     public static Game getCurrentGame() {

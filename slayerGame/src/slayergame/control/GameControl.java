@@ -10,7 +10,7 @@ import slayergame.view.Narrator;
 
 /** @author Chicho and Cristian */
 public class GameControl {
-
+   
     public static Player createPlayer(String name) {
         
         if (name == null) {
