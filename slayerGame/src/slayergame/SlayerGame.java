@@ -6,7 +6,6 @@
 package slayergame;
 
 import java.util.Scanner;
-import slayergame.control.DoorSphingeControl;
 import slayergame.control.GameControl;
 import slayergame.control.InventoryControl;
 import slayergame.control.MovementControl;

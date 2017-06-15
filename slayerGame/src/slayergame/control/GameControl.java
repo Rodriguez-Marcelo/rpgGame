@@ -35,6 +35,7 @@ public class GameControl {
         //where the user is and what are his options.
         ScenarioGenerator scenario = new ScenarioGenerator();
         scenario.generateScenario(player.getCurrentLocation());
+        DoorBlockControl doorBlocker = new DoorBlockControl();
         
         Narrator narrator = new Narrator();
         
@@ -47,13 +48,6 @@ public class GameControl {
 
             scenario.generateScenario(player.getCurrentLocation());
             
-            if(player.getCurrentLocation() == 2){
-                System.out.println("Blocker has been called");
-            } else if (player.getCurrentLocation() == 6) {
-                System.out.println("Blocker has been called");
-            } else if (player.getCurrentLocation() == 12){
-                System.out.println("Blocker has been called");
-            }
             
         }
         

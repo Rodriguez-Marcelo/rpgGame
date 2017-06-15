@@ -61,8 +61,9 @@ public class ScenarioGenerator {
                 + "\nYou see only one body that distinguishes itself from the rest:"
                 + "\nWearing some sort of blue light armor, you guess it's a"
                 + "\nsecurity guard. You also get to hear screams just across the"
-                + "\ngloomy hallway. Silent alarms still on, red lights flashing "
-                + "\nand circling all over the place, you see");
+                + "\ngloomy hallway. You spot a security elevator next to a 3D Printer"
+                + "\nand the security elevator needs some kind of key..."
+                + "\nMay be you could make one with the 3D Printer?");
                 this.locationName=("\nHallway in full alarm");
                 this.scenarioNumber=(2);
                 this.choices=("\n1 - Go through stair case up"

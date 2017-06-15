@@ -6,6 +6,8 @@
 package slayergame.control;
 
 import java.io.Serializable;
+import slayergame.model.DoorBlocker;
+import slayergame.view.DoorBlockView;
 
 /**
  *
@@ -51,6 +53,30 @@ public class MovementControl implements Serializable{
                         //items usage problem
                         break;
                     case 3:
+                        double radius = 0.0;
+                        double length = 0.0;
+                        DoorBlockView doorBlockView = new DoorBlockView();
+                        DoorBlockControl doorBlockControl = new DoorBlockControl();
+                        
+                        System.out.println("\nYou see one of those famous 3D printers in the "
+                            + "\nwall next to the door you're attempting to get"
+                            + "\ninto. Problem is, you need a Cone key to enter."
+                            + "\nYou see that the key would likely fit in your"
+                            + "\nhand."
+                            + "\nYou stare at the screen of the 3D Printer, and"
+                            + "\nsee two input values: radius & length "
+                            + "\nBelow these input boxes, you have a keypad...");
+                        System.out.println("Enter the radius:");
+                        radius = doorBlockView.getInput1();
+                        System.out.println("Enter the length:");
+                        length = doorBlockView.getInput2();
+                        
+                        double totalSA = doorBlockControl.coneKeyCalc(radius, length);
+                        
+                        doorBlockControl.selectDoorAnswerCone(totalSA);
+                        
+                        
+                                
                         futureLocation = 6;
                         return futureLocation;
                     case 4:
