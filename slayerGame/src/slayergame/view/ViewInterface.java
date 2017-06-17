@@ -9,10 +9,11 @@ package slayergame.view;
  *
  * @author Chicho
  */
-public class GameMenuView {
-
-    void displayMenu() {
-        System.out.println("\n *** displayMenu() function is called ***");
-    }
+public interface ViewInterface {
+    
+    public void display();
+    public int getInput();
+    public boolean doAction(int value);
     
 }
+

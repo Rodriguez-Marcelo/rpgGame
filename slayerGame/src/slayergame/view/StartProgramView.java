@@ -13,7 +13,7 @@ import slayergame.model.Player;
  *
  * @author Chicho
  */
-public class StartProgramView {
+public class StartProgramView extends View{
     
     private String promptMessage;
     
@@ -111,9 +111,12 @@ public class StartProgramView {
                          );
         MainMenuView mainMenuView = new MainMenuView();
                 
-        mainMenuView.displayMainMenuView();
+        mainMenuView.display();
     }
-    
-    
+
+    @Override
+    public boolean doAction(int value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

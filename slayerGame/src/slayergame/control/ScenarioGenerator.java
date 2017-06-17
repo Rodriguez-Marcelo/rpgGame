@@ -38,11 +38,8 @@ public class ScenarioGenerator {
                 + "\nscreens are showing error messages, which catch your "
                 + "\nattention. You see that a big, metal, heavy secured door "
                 + "\nis bent on its hinges blown up. ");
-                
                 this.locationName = ("\nAwakening in the lab...");
-                
                 this.scenarioNumber = 1;
-                
                 this.choices = ("\n1 - Go through door"
                 + "\n2 - Check dead body"
                 + "\n3 - Go through window"
@@ -73,15 +70,27 @@ public class ScenarioGenerator {
                 + "\n5 - Go through stair case down");
                 break;
             case 3:
+                this.description = ("\nDescription Scenario 3");
+                this.locationName=("\nNOT YET IMPLEMENTED");
+                this.scenarioNumber=(3);
+                this.choices=("\n**************");
                 break;
             case 4:
+                this.description = ("\nDescription Scenario 4");
+                this.locationName=("\nNOT YET IMPLEMENTED");
+                this.scenarioNumber=(3);
+                this.choices=("\n**************");
                 break;
             case 5:
+                this.description = ("\nDescription Scenario 5");
+                this.locationName=("\nNOT YET IMPLEMENTED");
+                this.scenarioNumber=(3);
+                this.choices=("\n**************");
                 break;
             case 6:
                 this.description = ("\nDescription Scenario 6");
                 this.locationName=("\nInside Security Elevator");
-                this.scenarioNumber=(3);
+                this.scenarioNumber=(6);
                 this.choices=("\n1 - Go to the Roof"
                 + "\n2 - Try to repair Sentry Gun"
                 + "\n3 - Go to Main Lobby"

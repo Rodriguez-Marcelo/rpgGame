@@ -8,30 +8,27 @@ package slayergame.view;
 import java.util.Scanner;
 import slayergame.SlayerGame;
 import slayergame.control.GameControl;
-import slayergame.view.GameMenuView;
 
 /**
  *
  * @author Chicho
  */
-public class MainMenuView {
-    
-    private String menu;
+public class MainMenuView extends View {
 
         public MainMenuView() {
-        this.menu = "\n"
+        super("\n"
                 + "\n+-----------------------------------+"
                 + "\n|             Main Menu             |"
                 + "\n+-----------------------------------+"
-                + "\n|            N - New Game           |"
-                + "\n|            S - Save Game          |"
-                + "\n|            L - Load Game          |"
-                + "\n|            H - How to play        |"
-                + "\n|            E - Exit               |"
-                + "\n+-----------------------------------+";
+                + "\n|            1 - New Game           |"
+                + "\n|            2 - Save Game          |"
+                + "\n|            3 - Load Game          |"
+                + "\n|            4 - How to play        |"
+                + "\n|            5 - Exit               |"
+                + "\n+-----------------------------------+");
     }
 
-    
+    /*
     public void displayMainMenuView() {
         
         boolean done = false;
@@ -73,28 +70,9 @@ public class MainMenuView {
         
         choice = choice.toUpperCase();
         
-        switch (choice) {
-            case "N":
-                GameControl.createNewGame(SlayerGame.getPlayer());
-                break;
-            case "S":
-                GameControl.saveGame(SlayerGame.getPlayer());
-                break;
-            case "L":
-                GameControl.loadSavedGame(SlayerGame.getPlayer());
-                break;
-            case "H":
-                this.displayHelpMenu();
-                break;
-            case "E":
-                break;
-            default:
-                System.out.println("\n*** Invalid selection, please try again ***");
-        }
         
-        
-        return true;
     }
+
 
     private void startNewGame() {
         
@@ -103,7 +81,8 @@ public class MainMenuView {
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayMenu();
     }
-
+*/
+        
     private void saveGame() {
         System.out.println("\n *** saveGame() function called ***");
     }
@@ -126,14 +105,40 @@ public class MainMenuView {
                 + "\n+--------------------------------------------------+");
         boolean done = false;
         do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
+            int menuOption = this.getInput();
+            if (menuOption < 1 || menuOption > 5)
                 return;
             
             done = this.doAction(menuOption);
             
         } while (!done);
         
+    }
+
+    @Override
+    public boolean doAction(int choice) {
+        
+        switch (choice) {
+            case 1:
+                GameControl.createNewGame(SlayerGame.getPlayer());
+                break;
+            case 2:
+                GameControl.saveGame(SlayerGame.getPlayer());
+                break;
+            case 3:
+                GameControl.loadSavedGame(SlayerGame.getPlayer());
+                break;
+            case 4:
+                this.displayHelpMenu();
+                break;
+            case 5:
+                break;
+            default:
+                System.out.println("\n*** Invalid selection, please try again ***");
+        }
+        
+        
+        return true;
     }
     
 }

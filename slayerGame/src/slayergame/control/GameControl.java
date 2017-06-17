@@ -36,7 +36,7 @@ public class GameControl {
         
         for (int i = 0; i < 30 || i == 99; i++){
             narrator.displayScenario(scenario);
-            int choice = narrator.getMenuOption();
+            int choice = narrator.getInput();
 
             MovementControl movementControler = new MovementControl();
             player.setCurrentLocation(movementControler.moveToScenario(player.getCurrentLocation(), choice));

@@ -11,7 +11,7 @@ import slayergame.control.GameControl;
 import slayergame.control.ScenarioGenerator;
 
 /** Chicho & Cristian **/
-public class Narrator {
+public class Narrator extends View {
     
     public void displayScenario (ScenarioGenerator scenario1){
         
@@ -19,54 +19,15 @@ public class Narrator {
         String scenarioDesc = scenario1.getDescription();
         String scenarioChoices = scenario1.getChoices();
         
-        System.out.println( locationName + "\n\n" + scenarioDesc + "\n\n"
+        System.out.println( locationName + "\n" + scenarioDesc + "\n"
                             + scenarioChoices );
         
     }
-    
-    public int getMenuOption() {
-        
-        Scanner keyboard = new Scanner(System.in);
-        int value = 0;
-        boolean valid = false;
-        
-        while (!valid) {
-            
-            value = keyboard.nextInt();
-            
-            if (value < 1) {
-                System.out.println("\nInvalid value! Please choose a path...");
-                continue;
-            }
-            
-            break;
-        }
-        
-        return value;
-    }
 
-    public boolean doAction(int choice) {
-        
-        switch (choice) {
-            case 1:
-                GameControl.createNewGame(SlayerGame.getPlayer());
-                break;
-            case 2:
-                GameControl.saveGame(SlayerGame.getPlayer());
-                break;
-            case 3:
-                GameControl.loadSavedGame(SlayerGame.getPlayer());
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            default:
-                System.out.println("\n*** Invalid selection, please try again ***");
-        }
-        
-        
-        return true;
+    @Override
+    public boolean doAction(int value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
     
 }
