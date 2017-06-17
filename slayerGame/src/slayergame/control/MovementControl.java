@@ -53,8 +53,10 @@ public class MovementControl implements Serializable{
                         //items usage problem
                         break;
                     case 3:
+                        
                         double radius = 0.0;
                         double height = 0.0;
+                        
                         DoorBlockView doorBlockView = new DoorBlockView();
                         DoorBlockControl doorBlockControl = new DoorBlockControl();
                         
@@ -66,6 +68,7 @@ public class MovementControl implements Serializable{
                             + "\nYou stare at the screen of the 3D Printer, and"
                             + "\nsee two input values: radius & length "
                             + "\nBelow these input boxes, you have a keypad...");
+                        
                         boolean openDoor = false;
                         do{
                             
@@ -78,11 +81,7 @@ public class MovementControl implements Serializable{
                         
                             openDoor=doorBlockControl.selectDoorAnswerCone(totalSA);
                         }while(!openDoor);
-                            
-                            
-                            
-                        
-                                
+                                   
                         futureLocation = 6;
                         return futureLocation;
                     case 4:
