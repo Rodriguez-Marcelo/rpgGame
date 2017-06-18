@@ -5,10 +5,7 @@
  */
 package slayergame.model;
 
-/**
- *
- * @author Chicho
- */
+/** Chicho & Cristian **/
 public class DoorBlocker {
     
 }

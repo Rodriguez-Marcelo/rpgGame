@@ -7,10 +7,7 @@ package slayergame.model;
 
 import java.io.Serializable;
 import java.util.Objects;
-/**
- *
- * @author creestian
- */
+/** Chicho & Cristian **/
 public class Consumables implements Serializable{
     
     private int quantity;

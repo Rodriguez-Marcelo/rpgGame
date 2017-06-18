@@ -7,10 +7,7 @@ package slayergame.model;
 
 import java.io.Serializable;
 import java.util.Objects;
-/**
- *
- * @author creestian
- */
+/** Chicho & Cristian **/
 public class NPC implements Serializable{
     
     private String name;

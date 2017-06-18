@@ -5,10 +5,7 @@
  */
 package slayergame.view;
 
-/**
- *
- * @author Chicho
- */
+/** Chicho & Cristian **/
 public interface ViewInterface {
     
     public void display();

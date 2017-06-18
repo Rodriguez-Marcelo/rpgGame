@@ -8,10 +8,7 @@ package slayergame.control;
 import java.util.Scanner;
 import slayergame.SlayerGame;
 
-/**
- *
- * @author Chicho
- */
+/** Chicho & Cristian **/
 public class ScenarioGenerator {
 
     private String description;
