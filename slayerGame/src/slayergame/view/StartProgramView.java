@@ -9,10 +9,7 @@ import java.util.Scanner;
 import slayergame.control.GameControl;
 import slayergame.model.Player;
 
-/**
- *
- * @author Chicho
- */
+/** Chicho & Cristian **/
 public class StartProgramView extends View{
     
     private String promptMessage;

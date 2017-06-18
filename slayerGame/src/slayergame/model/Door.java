@@ -8,10 +8,7 @@ package slayergame.model;
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- *
- * @author Chicho
- */
+/** Chicho & Cristian **/
 public class Door implements Serializable{
     
     private int sturdiness;

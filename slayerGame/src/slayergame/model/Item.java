@@ -7,10 +7,7 @@ package slayergame.model;
 
 import java.io.Serializable;
 import java.util.Objects;
-/**
- *
- * @author Chicho
- */
+/** Chicho & Cristian **/
 public class Item implements Serializable{
     
     public String name;

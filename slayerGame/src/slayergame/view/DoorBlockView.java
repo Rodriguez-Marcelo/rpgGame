@@ -7,10 +7,7 @@ package slayergame.view;
 
 import java.util.Scanner;
 
-/**
- *
- * @author Chicho
- */
+/** Chicho & Cristian **/
 public class DoorBlockView {
     
     public double getInput1() {

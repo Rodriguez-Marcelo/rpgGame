@@ -9,10 +9,7 @@ import java.io.Serializable;
 import slayergame.model.DoorBlocker;
 import slayergame.view.DoorBlockView;
 
-/**
- *
- * @author Chicho
- */
+/** Chicho & Cristian **/
 public class MovementControl implements Serializable{
     
     public int moveToScenario(int currentLocation, int choice){

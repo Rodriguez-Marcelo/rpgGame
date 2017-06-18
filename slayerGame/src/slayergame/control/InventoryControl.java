@@ -5,10 +5,7 @@
  */
 package slayergame.control;
 
-/**
- *
- * @author Chicho
- */
+/** Chicho & Cristian **/
 public class InventoryControl {
     
 }

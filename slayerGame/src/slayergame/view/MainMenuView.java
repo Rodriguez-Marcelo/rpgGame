@@ -9,10 +9,7 @@ import java.util.Scanner;
 import slayergame.SlayerGame;
 import slayergame.control.GameControl;
 
-/**
- *
- * @author Chicho
- */
+/** Chicho & Cristian **/
 public class MainMenuView extends View {
 
         public MainMenuView() {
