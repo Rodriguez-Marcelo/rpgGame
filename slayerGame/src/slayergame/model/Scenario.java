@@ -8,10 +8,7 @@ package slayergame.model;
 import java.awt.Point;
 import java.io.Serializable;
 
-/**
- *
- * @author Chicho
- */
+/** Chicho & Cristian **/
 public enum Scenario implements Serializable{
     
     AwakeInLab,
