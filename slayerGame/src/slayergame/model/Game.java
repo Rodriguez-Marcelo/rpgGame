@@ -8,4 +8,7 @@ package slayergame.model;
 /** Chicho & Cristian **/
 public class Game {
     
+    public Player player;
+    public DoorBlocker doorBlock1, doorBlock2, doorblock3;
+    
 }

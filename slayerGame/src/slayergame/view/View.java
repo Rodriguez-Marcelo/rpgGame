@@ -23,6 +23,7 @@ public abstract class View implements ViewInterface {
     @Override
     public void display() {
         
+        System.out.println();
         boolean done = false;
         do {
             int menuOption = this.getInput();
@@ -43,7 +44,7 @@ public abstract class View implements ViewInterface {
         int value = 0;
         
         while (!valid) {
-            System.out.println("\n" + this.displayMessage);
+            System.out.println("\n" + this.displayMessage + "\n\n\nEnter your choice:");
             
             value = keyboard.nextInt();
             

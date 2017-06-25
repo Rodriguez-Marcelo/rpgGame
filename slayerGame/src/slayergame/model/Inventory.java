@@ -10,7 +10,9 @@ import java.util.Objects;
 /** Chicho & Cristian **/
 public class Inventory implements Serializable{
     
-    private int size;
+    public int size;
+    public Item item1, item2, item3, item4, item5;
+    
 
     public Inventory() {
     }
