@@ -13,15 +13,15 @@ import slayergame.control.ScenarioGenerator;
 /** Chicho & Cristian **/
 public class Narrator extends View {
     
-    public void displayScenario (ScenarioGenerator scenario1){
+    public void narrateScenario (ScenarioGenerator scenario){
         
-        String locationName = scenario1.getLocationName();
-        String scenarioDesc = scenario1.getDescription();
-        String scenarioChoices = scenario1.getChoices();
+        String locationName = scenario.getLocationName();
+        String scenarioDesc = scenario.getDescription();
+        String scenarioChoices = scenario.getChoices();
         
         System.out.println( locationName + "\n" + scenarioDesc + "\n"
                             + scenarioChoices );
-        
+
     }
 
     @Override

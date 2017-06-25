@@ -5,6 +5,9 @@
  */
 package slayergame.control;
 import slayergame.SlayerGame;
+import slayergame.model.Game;
+import slayergame.model.InventoryItem;
+import slayergame.model.Item;
 import slayergame.model.Player;
 import slayergame.view.Narrator;
 
@@ -29,19 +32,35 @@ public class GameControl {
         
         //Here I create a locationView object, wich will display
         //where the user is and what are his options.
+        /*
         ScenarioGenerator scenario = new ScenarioGenerator();
         scenario.generateScenario(player.getCurrentLocation());
+        */
+        /*ScenarioGenerator.(player.getCurrentLocation());*/
+        
+        Game game = new Game();
+        SlayerGame.setCurrentGame(game);
+        
+        game.setPlayer(player);
+        
+        InventoryItem[] inventoryList = GameControl.createInventoryList();
+        game.setInventory(inventoryList);
+        
+        System.out.println("GOOD LUCK, HAVE FUN!");
         
         Narrator narrator = new Narrator();
         
-        for (int i = 0; i < 30 || i == 99; i++){
-            narrator.displayScenario(scenario);
+        ScenarioGenerator scenarioGenerator = new ScenarioGenerator();
+        
+        for (int i = 0; i < 99 || i == 15; i++){
+            scenarioGenerator.generateScenario(player.getCurrentLocation());
+            narrator.narrateScenario(scenarioGenerator);
             int choice = narrator.getInput();
 
             MovementControl movementControler = new MovementControl();
             player.setCurrentLocation(movementControler.moveToScenario(player.getCurrentLocation(), choice));
 
-            scenario.generateScenario(player.getCurrentLocation());
+            scenarioGenerator.generateScenario(player.getCurrentLocation());
         }
     }
 
@@ -51,6 +70,37 @@ public class GameControl {
 
     public static void loadSavedGame(Player player) {
         System.out.println("\n *** loadSavedGame() function is called ***");
+    }
+
+    public static InventoryItem[] createInventoryList() {
+        InventoryItem[] inventory = new InventoryItem[5];
+        
+        InventoryItem redIDCard = new InventoryItem();
+        redIDCard.setFound(false);
+        redIDCard.setUsed(false);
+        inventory[Item.redIDCard.ordinal()] = redIDCard;
+
+        InventoryItem policeBaton = new InventoryItem();
+        policeBaton.setFound(false);
+        policeBaton.setUsed(false);
+        inventory[Item.policeBaton.ordinal()] = policeBaton;
+        
+        InventoryItem medkit = new InventoryItem();
+        medkit.setFound(false);
+        medkit.setUsed(false);
+        inventory[Item.medkit.ordinal()] = medkit;
+        
+        InventoryItem blueIDCard = new InventoryItem();
+        blueIDCard.setFound(false);
+        blueIDCard.setUsed(false);
+        inventory[Item.blueIDCard.ordinal()] = blueIDCard;
+        
+        InventoryItem securityArmour = new InventoryItem();
+        securityArmour.setFound(false);
+        securityArmour.setUsed(false);
+        inventory[Item.securityArmour.ordinal()] = securityArmour;
+        
+        return inventory;
     }
 
     
