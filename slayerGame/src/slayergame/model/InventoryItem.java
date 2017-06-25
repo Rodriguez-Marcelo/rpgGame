@@ -7,10 +7,7 @@ package slayergame.model;
 
 import java.io.Serializable;
 
-/**
- *
- * @author Chicho
- */
+/** Chicho & Cristian **/
 public class InventoryItem implements Serializable{
     
     public boolean found = false;

@@ -24,10 +24,7 @@ import slayergame.view.MainMenuView;
 import slayergame.view.Narrator;
 import slayergame.view.StartProgramView;
 
-/**
- *
- * @author Chicho
- */
+/** Chicho & Cristian **/
 public class SlayerGame {
 
     private static Game currentGame = null;
