@@ -39,12 +39,16 @@ public abstract class View implements ViewInterface {
     @Override
     public int getInput() {
         
+        if (this.displayMessage == null){
+            this.displayMessage = ("");
+        }
+        
         Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
         int value = 0;
         
         while (!valid) {
-            System.out.println("\n" + this.displayMessage + "\n\n\nEnter your choice:");
+            System.out.println(this.displayMessage + "\n\nEnter your choice:");
             
             value = keyboard.nextInt();
             
