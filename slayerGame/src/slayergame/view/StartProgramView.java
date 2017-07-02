@@ -48,8 +48,13 @@ public class StartProgramView extends View{
             if (playersName.toUpperCase().equals("Q"))
                 return;
             
+            try{
             done = this.doAction(playersName);
-            
+            } catch (Throwable te){
+                System.out.println("\nThere was an error in your previous input."
+                        + "\nPlease, try again with a valid input.");
+                done = this.doAction(playersName);
+            }
         } while (!done);
         
         /*System.out.println("\n *** displayStartProgram() function called ***");*/
@@ -96,7 +101,7 @@ public class StartProgramView extends View{
         }
         
         this.displayNextView(player);
-        
+
         return true;
     }
 
@@ -107,7 +112,7 @@ public class StartProgramView extends View{
                          + "\n============================================"
                          );
         MainMenuView mainMenuView = new MainMenuView();
-                
+        
         mainMenuView.display();
     }
 

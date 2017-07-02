@@ -6,11 +6,12 @@
 package slayergame.view;
 
 import java.util.Scanner;
+import slayergame.exceptions.MovementControlException;
 
 /** Chicho & Cristian **/
 public class DoorBlockView {
     
-    public double getInput1() {
+    public double getInput() throws MovementControlException {
         
         Scanner keyboard = new Scanner(System.in);
         double value = 0;
@@ -21,8 +22,10 @@ public class DoorBlockView {
             value = keyboard.nextDouble();
             
             if (value < 1) {
-                System.out.println("\nInvalid value! Cannot print something that small...");
-                continue;
+                
+                throw new MovementControlException("\nInvalid value! Cannot print something that small...");
+                //System.out.println("\nInvalid value! Cannot print something that small...");
+
             }
             
             break;
@@ -30,25 +33,5 @@ public class DoorBlockView {
         
         return value;
     }
-    
-    public double getInput2() {
-        
-        Scanner keyboard = new Scanner(System.in);
-        double value = 0;
-        boolean valid = false;
-        
-        while (!valid) {
-            
-            value = keyboard.nextDouble();
-            
-            if (value < 1) {
-                System.out.println("\nInvalid value! Cannot print something that small...");
-                continue;
-            }
-            
-            break;
-        }
-        
-        return value;
-    }
+
 }

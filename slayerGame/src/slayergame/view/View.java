@@ -25,6 +25,7 @@ public abstract class View implements ViewInterface {
         
         System.out.println();
         boolean done = false;
+        try{
         do {
             int menuOption = this.getInput();
             if (menuOption < 1 || menuOption > 5)
@@ -33,15 +34,23 @@ public abstract class View implements ViewInterface {
             done = this.doAction(menuOption);
             
         } while (!done);
-        
+        } catch (Throwable te){
+            System.out.println("Invalid option, please try a VALID input. The game only takes number from 1 to 5.");
+                    do {
+            int menuOption = this.getInput();
+            if (menuOption < 1 || menuOption > 5)
+                return;
+            
+            done = this.doAction(menuOption);
+            
+        } while (!done);
+        }
         /*System.out.println("\n *** displayStartProgram() function called ***");*/
     }
     @Override
     public int getInput() {
         
-        if (this.displayMessage == null){
-            this.displayMessage = ("");
-        }
+        if (this.displayMessage == null){this.displayMessage = ("");}
         
         Scanner keyboard = new Scanner(System.in);
         boolean valid = false;

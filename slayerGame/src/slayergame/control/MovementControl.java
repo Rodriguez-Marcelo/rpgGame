@@ -6,13 +6,14 @@
 package slayergame.control;
 
 import java.io.Serializable;
+import slayergame.exceptions.MovementControlException;
 import slayergame.model.DoorBlocker;
 import slayergame.view.DoorBlockView;
 
 /** Chicho & Cristian **/
 public class MovementControl implements Serializable{
     
-    public int moveToScenario(int currentLocation, int choice){
+    public int moveToScenario(int currentLocation, int choice) throws MovementControlException{
         
         int futureLocation;
         
@@ -37,7 +38,8 @@ public class MovementControl implements Serializable{
                         futureLocation = 4;
                         return futureLocation;
                     default:
-                        return 0;
+                        String message = ("The value entered is not a valid input.\n Please, select another value.");
+                        throw new MovementControlException(message);
                 }
                 break;  
             case 2:
@@ -70,9 +72,9 @@ public class MovementControl implements Serializable{
                         do{
                             
                             System.out.println("Enter the radius:");
-                            radius = doorBlockView.getInput1();
+                            radius = doorBlockView.getInput();
                             System.out.println("Enter the height:");
-                            height = doorBlockView.getInput2();
+                            height = doorBlockView.getInput();
                         
                             double totalSA = doorBlockControl.calcConeKey(radius, height);
                         

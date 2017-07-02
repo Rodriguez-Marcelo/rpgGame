@@ -32,7 +32,14 @@ public class SlayerGame {
     
     public static void main(String[] args) {
         StartProgramView startProgramView = new StartProgramView();
+        try{
         startProgramView.displayStartProgramView();
+        } catch (Throwable te){
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.displayStartProgramView();
+            System.out.println("Too many errors were found in this instance of the game. Please, restart it ant try again.");
+        }
     }
 
     public static Game getCurrentGame() {

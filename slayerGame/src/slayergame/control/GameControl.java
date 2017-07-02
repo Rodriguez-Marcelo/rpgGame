@@ -5,6 +5,7 @@
  */
 package slayergame.control;
 import slayergame.SlayerGame;
+import slayergame.exceptions.MovementControlException;
 import slayergame.model.Game;
 import slayergame.model.InventoryItem;
 import slayergame.model.Item;
@@ -58,8 +59,10 @@ public class GameControl {
             int choice = narrator.getInput();
 
             MovementControl movementControler = new MovementControl();
+            try{
             player.setCurrentLocation(movementControler.moveToScenario(player.getCurrentLocation(), choice));
-
+            } catch (MovementControlException me){System.out.println(me.getMessage());
+            }
             scenarioGenerator.generateScenario(player.getCurrentLocation());
         }
     }
