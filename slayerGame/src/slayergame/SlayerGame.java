@@ -9,6 +9,7 @@ import java.util.Scanner;
 import slayergame.control.GameControl;
 import slayergame.control.InventoryControl;
 import slayergame.control.MovementControl;
+import slayergame.exceptions.StartProgramViewExceptions;
 import slayergame.model.Consumables;
 import slayergame.model.Door;
 import slayergame.model.DoorBlocker;
@@ -30,7 +31,7 @@ public class SlayerGame {
     private static Game currentGame = null;
     private static Player player = null;
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws StartProgramViewExceptions {
         StartProgramView startProgramView = new StartProgramView();
         try{
         startProgramView.displayStartProgramView();
@@ -38,7 +39,6 @@ public class SlayerGame {
             System.out.println(te.getMessage());
             te.printStackTrace();
             startProgramView.displayStartProgramView();
-            System.out.println("Too many errors were found in this instance of the game. Please, restart it ant try again.");
         }
     }
 

@@ -52,12 +52,12 @@ public class GameControl {
         Narrator narrator = new Narrator();
         
         ScenarioGenerator scenarioGenerator = new ScenarioGenerator();
-        
-        for (int i = 0; i < 99 || i == 15; i++){
+        int endExistance=0;
+        for (int i = 0; i < 50 || i == 15; i++){
             scenarioGenerator.generateScenario(player.getCurrentLocation());
             narrator.narrateScenario(scenarioGenerator);
             int choice = narrator.getInput();
-
+            endExistance++;
             MovementControl movementControler = new MovementControl();
             try{
             player.setCurrentLocation(movementControler.moveToScenario(player.getCurrentLocation(), choice));
@@ -65,6 +65,7 @@ public class GameControl {
             }
             scenarioGenerator.generateScenario(player.getCurrentLocation());
         }
+        
     }
 
     public static void saveGame(Player player) {

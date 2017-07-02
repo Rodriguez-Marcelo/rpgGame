@@ -83,6 +83,7 @@ public class MovementControl implements Serializable{
                                    
                         futureLocation = 6;
                         return futureLocation;
+                        
                     case 4:
                         //death
                         break;

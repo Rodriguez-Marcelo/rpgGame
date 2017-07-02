@@ -7,6 +7,7 @@ package slayergame.view;
 
 import java.util.Scanner;
 import slayergame.control.GameControl;
+import slayergame.exceptions.StartProgramViewExceptions;
 import slayergame.model.Player;
 
 /** Chicho & Cristian **/
@@ -40,7 +41,7 @@ public class StartProgramView extends View{
                 + "\n+-----------------------------+");
     }
 
-    public void displayStartProgramView() {
+    public void displayStartProgramView() throws StartProgramViewExceptions {
         
         boolean done = false;
         do {
@@ -60,7 +61,7 @@ public class StartProgramView extends View{
         /*System.out.println("\n *** displayStartProgram() function called ***");*/
     }
 
-    private String getPlayersName() {
+    private String getPlayersName() throws StartProgramViewExceptions {
         
         Scanner keyboard = new Scanner(System.in);
         String value = "";
@@ -73,8 +74,7 @@ public class StartProgramView extends View{
             value = value.trim();
             
             if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
+                throw new StartProgramViewExceptions("\nInvalid value: value can not be blank");
             }
             
             break;
