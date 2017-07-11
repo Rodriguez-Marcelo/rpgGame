@@ -5,7 +5,13 @@
  */
 package slayergame;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import slayergame.control.GameControl;
 import slayergame.control.InventoryControl;
 import slayergame.control.MovementControl;
@@ -31,14 +37,42 @@ public class SlayerGame {
     private static Game currentGame = null;
     private static Player player = null;
     
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    
+    private static PrintWriter logFile = null;
+    
+    
     public static void main(String[] args) throws StartProgramViewExceptions {
         StartProgramView startProgramView = new StartProgramView();
+        
         try{
-        startProgramView.displayStartProgramView();
+            
+            SlayerGame.inFile =
+                    new BufferedReader(new InputStreamReader(System.in));
+            SlayerGame.outFile = new PrintWriter(System.out, true);
+            
+            startProgramView.displayStartProgramView();
+            
         } catch (Throwable te){
+            
             System.out.println(te.getMessage());
             te.printStackTrace();
             startProgramView.displayStartProgramView();
+            
+        }
+        
+        finally {
+            
+            try {
+                if (SlayerGame.inFile != null)
+                    SlayerGame.inFile.close();
+                if (SlayerGame.outFile != null)
+                    SlayerGame.outFile.close();
+            } catch (IOException ex) {
+                Logger.getLogger(SlayerGame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         }
     }
 
@@ -58,4 +92,25 @@ public class SlayerGame {
         SlayerGame.player = player;
     }
     
+    public static PrintWriter getOutFile(){
+        return outFile;
+    }
+    
+    public static void setOutFile(PrintWriter outFile){
+        SlayerGame.outFile = outFile;
+    }
+    
+    public static BufferedReader getInFile(){
+        return inFile;
+    }        
+    
+    public static void setInFile(BufferedReader infile){
+        SlayerGame.inFile = inFile;
+    }
+    /*
+    public static PrintWriter getLogFile(){
+        
+        
+    }
+    */
 }
