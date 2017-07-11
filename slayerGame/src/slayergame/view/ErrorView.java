@@ -6,6 +6,7 @@
 package slayergame.view;
 
 import java.io.PrintWriter;
+import static slayergame.SlayerGame.getOutFile;
 
 /**
  *
