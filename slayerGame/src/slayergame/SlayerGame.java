@@ -52,12 +52,18 @@ public class SlayerGame {
                     new BufferedReader(new InputStreamReader(System.in));
             SlayerGame.outFile = new PrintWriter(System.out, true);
             
+            String filePath = "log.txt";
+            SlayerGame.logFile = new PrintWriter(filePath);
+            
+            
             startProgramView.displayStartProgramView();
             
-        } catch (Throwable te){
+        } catch (Exception e){
             
-            System.out.println(te.getMessage());
-            te.printStackTrace();
+            System.out.println("Exception: " + e.toString() +
+                               "\nCause: " + e.getCause() +
+                               "\nMessage: " + e.getMessage());
+            
             startProgramView.displayStartProgramView();
             
         }
@@ -67,8 +73,13 @@ public class SlayerGame {
             try {
                 if (SlayerGame.inFile != null)
                     SlayerGame.inFile.close();
+                
                 if (SlayerGame.outFile != null)
                     SlayerGame.outFile.close();
+                
+                if (SlayerGame.logFile != null)
+                    SlayerGame.logFile.close();
+                
             } catch (IOException ex) {
                 Logger.getLogger(SlayerGame.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -107,10 +118,14 @@ public class SlayerGame {
     public static void setInFile(BufferedReader infile){
         SlayerGame.inFile = inFile;
     }
-    /*
+    
     public static PrintWriter getLogFile(){
-        
-        
+        return logFile;
     }
-    */
+    
+    public static void setLogFile(PrintWriter logFile){
+        SlayerGame.logFile = logFile;
+    }
 }
+    
+
