@@ -63,23 +63,25 @@ public class StartProgramView extends View{
 
     private String getPlayersName() throws StartProgramViewExceptions {
         
-        Scanner keyboard = new Scanner(System.in);
+        
         String value = "";
         boolean valid = false;
         
+        try{
         while (!valid) {
             System.out.println("\n" + this.promptMessage);
             
-            value = keyboard.nextLine();
+            value = this.keyboard.readLine();
             value = value.trim();
             
             if (value.length() < 1) {
-                throw new StartProgramViewExceptions("\nInvalid value: value can not be blank");
+                System.out.println("You must enter a value.");
+                continue;
             }
             
             break;
         }
-        
+        } catch (Exception e){System.out.println("Error reading input: " + e.getMessage());}
         return value;
         
     }   

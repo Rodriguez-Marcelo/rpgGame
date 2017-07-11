@@ -9,17 +9,20 @@ import java.util.Scanner;
 import slayergame.exceptions.MovementControlException;
 
 /** Chicho & Cristian **/
-public class DoorBlockView {
+public class DoorBlockView extends View{
     
-    public double getInput() throws MovementControlException {
+
+    public double getInput1() throws MovementControlException {
         
-        Scanner keyboard = new Scanner(System.in);
+        
         double value = 0;
         boolean valid = false;
         
+        try{
         while (!valid) {
             
-            value = keyboard.nextDouble();
+            String stringValue = this.keyboard.readLine();
+            value = Double.parseDouble(stringValue);
             
             if (value < 1) {
                 
@@ -30,8 +33,14 @@ public class DoorBlockView {
             
             break;
         }
+        } catch (Exception e){System.out.println("Error reading input: " + e.getMessage());}
         
         return value;
+    }
+
+    @Override
+    public boolean doAction(int value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

@@ -5,12 +5,18 @@
  */
 package slayergame.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import slayergame.SlayerGame;
 
 /** Chicho & Cristian **/
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = SlayerGame.getInFile();
+    protected final PrintWriter console = SlayerGame.getOutFile();
     
     public View(){
         
@@ -52,21 +58,26 @@ public abstract class View implements ViewInterface {
         
         if (this.displayMessage == null){this.displayMessage = ("");}
         
-        Scanner keyboard = new Scanner(System.in);
+
         boolean valid = false;
         int value = 0;
-        
-        while (!valid) {
-            System.out.println(this.displayMessage + "\n\nEnter your choice:");
-            
-            value = keyboard.nextInt();
-            
-            if (value < 1 || value > 5) {
-                System.out.println("*** You must enter a valid option ***");
-                continue;
+        String stringChoice = null;
+        try{
+            while (!valid) {
+                System.out.println(this.displayMessage + "\n\nEnter your choice:");
+
+                stringChoice = this.keyboard.readLine();
+                value = Integer.parseInt(stringChoice);
+
+                if (value < 1 || value > 5) {
+                    System.out.println("*** You must enter a valid option ***");
+                    continue;
+                }
+
+                break;
             }
-            
-            break;
+        } catch (Exception e){
+            System.out.println("Error reading input: " + e.getMessage());
         }
         
         return value;

@@ -72,9 +72,9 @@ public class MovementControl implements Serializable{
                         do{
                             
                             System.out.println("Enter the radius:");
-                            radius = doorBlockView.getInput();
+                            radius = doorBlockView.getInput1();
                             System.out.println("Enter the height:");
-                            height = doorBlockView.getInput();
+                            height = doorBlockView.getInput1();
                         
                             double totalSA = doorBlockControl.calcConeKey(radius, height);
                         

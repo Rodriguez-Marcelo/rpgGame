@@ -24,61 +24,6 @@ public class MainMenuView extends View {
                 + "\n|            5 - Exit               |"
                 + "\n+-----------------------------------+");
     }
-
-    /*
-    public void displayMainMenuView() {
-        
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        
-    }
-
-    public String getMenuOption() {
-        
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid) {
-            System.out.println(this.menu);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break;
-        }
-        
-        return value;
-    }
-
-    public boolean doAction(String choice) {
-        
-        choice = choice.toUpperCase();
-        
-        
-    }
-
-
-    private void startNewGame() {
-        
-        GameControl.createNewGame(SlayerGame.getPlayer());
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
-    }
-*/
         
     private void saveGame() {
         System.out.println("\n *** saveGame() function called ***");

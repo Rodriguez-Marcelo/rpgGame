@@ -6,6 +6,7 @@
 package slayergame.view;
 
 import java.io.PrintWriter;
+import slayergame.SlayerGame;
 import static slayergame.SlayerGame.getOutFile;
 
 /**
@@ -15,6 +16,8 @@ import static slayergame.SlayerGame.getOutFile;
 public class ErrorView {
     
     private static final PrintWriter errorFile = getOutFile();
+    private static final PrintWriter logFile = SlayerGame.getLogFile();
+    
     
     public static void display(String className, String errorMessage) {
         
@@ -23,6 +26,9 @@ public class ErrorView {
         + "\n- ERROR - " + errorMessage
         + "\n +----------------------------------------------+"
         );
+        
+        logFile.println(className + " - " + errorMessage);
+        
     }
     
 }
