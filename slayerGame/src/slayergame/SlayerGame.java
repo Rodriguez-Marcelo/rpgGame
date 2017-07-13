@@ -44,7 +44,7 @@ public class SlayerGame {
     
     
     public static void main(String[] args) throws StartProgramViewExceptions {
-        StartProgramView startProgramView = new StartProgramView();
+        
         
         try{
             
@@ -55,8 +55,8 @@ public class SlayerGame {
             String filePath = "log.txt";
             SlayerGame.logFile = new PrintWriter(filePath);
             
-            
-            startProgramView.displayStartProgramView();
+            StartProgramView startProgramView = new StartProgramView();
+            startProgramView.displayStartProgramView(); 
             
         } catch (Exception e){
             
@@ -64,7 +64,7 @@ public class SlayerGame {
                                "\nCause: " + e.getCause() +
                                "\nMessage: " + e.getMessage());
             
-            startProgramView.displayStartProgramView();
+
             
         }
         
@@ -83,8 +83,8 @@ public class SlayerGame {
             } catch (IOException ex) {
                 Logger.getLogger(SlayerGame.class.getName()).log(Level.SEVERE, null, ex);
             }
-
         }
+
     }
 
     public static Game getCurrentGame() {

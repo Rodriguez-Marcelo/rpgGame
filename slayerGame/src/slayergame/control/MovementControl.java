@@ -9,6 +9,7 @@ import java.io.Serializable;
 import slayergame.exceptions.MovementControlException;
 import slayergame.model.DoorBlocker;
 import slayergame.view.DoorBlockView;
+import slayergame.view.Narrator;
 
 /** Chicho & Cristian **/
 public class MovementControl implements Serializable{
@@ -32,7 +33,7 @@ public class MovementControl implements Serializable{
                         futureLocation = 3;
                         return futureLocation;
                     case 4:
-                        //MUERTE
+                        //Death
                         break;
                     case 5:
                         futureLocation = 4;
@@ -58,27 +59,28 @@ public class MovementControl implements Serializable{
                         
                         DoorBlockView doorBlockView = new DoorBlockView();
                         DoorBlockControl doorBlockControl = new DoorBlockControl();
-                        
-                        System.out.println("\nYou see one of those famous 3D printers in the "
-                            + "\nwall next to the door you're attempting to get"
-                            + "\ninto. Problem is, you need a Cone key to enter."
-                            + "\nYou see that the key would likely fit in your"
-                            + "\nhand."
-                            + "\nYou stare at the screen of the 3D Printer, and"
-                            + "\nsee two input values: radius & length "
-                            + "\nBelow these input boxes, you have a keypad...");
+                        Narrator narrator = new Narrator();
+                        narrator.displayMessage(""
+                                + "\nYou see one of those famous 3D printers in the "
+                                + "\nwall next to the door you're attempting to get"
+                                + "\ninto. Problem is, you need a Cone key to enter."
+                                + "\nYou see that the key would likely fit in your"
+                                + "\nhand."
+                                + "\nYou stare at the screen of the 3D Printer, and"
+                                + "\nsee two input values: radius & height "
+                                + "\nBelow these input boxes, you have a keypad...");
                         
                         boolean openDoor = false;
                         do{
                             
-                            System.out.println("Enter the radius:");
+                            narrator.displayMessage("Enter the radius:");
                             radius = doorBlockView.getInput1();
-                            System.out.println("Enter the height:");
+                            narrator.displayMessage("Enter the height:");
                             height = doorBlockView.getInput1();
                         
                             double totalSA = doorBlockControl.calcConeKey(radius, height);
                         
-                            openDoor=doorBlockControl.selectDoorAnswerCone(totalSA);
+                            openDoor=doorBlockView.selectDoorAnswerCone(totalSA);
                         }while(!openDoor);
                                    
                         futureLocation = 6;

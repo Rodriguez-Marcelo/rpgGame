@@ -21,26 +21,5 @@ public enum Scenario implements Serializable{
     Bathroom,
     LoungeRoom,
     HallwayToDorms;
-    
-    /*
-    public void scenarioGenerator(int currentLocation){
-        
-        switch (currentLocation){
-            case 1:
-                System.out.println(Scenario1);
-                break;
-            case 2:
-                System.out.println("YA FUNCIONA JA");
-        }
-    }
-    
-     public String getScenario() {
-        return scenario;
-    }
 
-    public Point getLocation() {
-        return location;
-    }
-*/
-    
 }

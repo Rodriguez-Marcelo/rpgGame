@@ -27,7 +27,7 @@ public class DoorBlockView extends View{
             if (value < 1) {
                 
                 throw new MovementControlException("\nInvalid value! Cannot print something that small...");
-                //System.out.println("\nInvalid value! Cannot print something that small...");
+                
 
             }
             
@@ -38,9 +38,58 @@ public class DoorBlockView extends View{
         return value;
     }
 
+    
+    public boolean selectDoorAnswerCone (double totalSA){
+        
+        boolean openDoor;
+
+        if (totalSA >= 68.26 && totalSA < 189.61){
+            /*OK*/
+            this.console.println("\n"
+                + "\n+--------------------------------------------------+"
+                + "\n|   It wasn't a perfect fit... but with a bit of   |"
+                + "\n|   struggling, you made it stuck.                 |"
+                + "\n|   The door barely opened.                        |"
+                + "\n+--------------------------------------------------+");
+            openDoor = true;
+        } else if (totalSA > 189.61 && totalSA <= 485.41){
+            /*OK*/
+            this.console.println("\n"
+                + "\n+--------------------------------------------------+"
+                + "\n|   It wasn't a perfect fit... but with a bit of   |"
+                + "\n|   struggling, you made it stuck.                 |"
+                + "\n|   The door barely opened.                        |"
+                + "\n+--------------------------------------------------+");
+            openDoor = true;
+        } else if (totalSA == 189.61){
+            /*PERFECT*/
+            this.console.println("\n"
+                + "\n+--------------------------------------------------+"
+                + "\n|    The key fitted perfectly!                     |"
+                + "\n|    The door opens swiftly.                       |"
+                + "\n+--------------------------------------------------+");            
+            openDoor = true;
+        } else {
+            this.console.println("\n"
+                + "\n+--------------------------------------------------+"
+                + "\n|  The screen of the 3D printer flashes red,       |"
+                + "\n|  displaying: ERROR - TRY AGAIN                   |"
+                + "\n+--------------------------------------------------+");
+            openDoor = false; 
+        }
+        return openDoor;
+    }
+    
+
+
+    
+    /***************************************************************************************
+    ***************************************************************************************/
+    
     @Override
     public boolean doAction(int value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
+    
 }

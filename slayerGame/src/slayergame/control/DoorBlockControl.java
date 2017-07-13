@@ -35,40 +35,6 @@ public class DoorBlockControl {
         totalSA = Math.round( totalSA * 100.0 ) / 100.0;
         return totalSA;
     }
-    public boolean selectDoorAnswerCone (double totalSA){
-        
-        boolean openDoor;
-
-        if (totalSA >= 68.26 && totalSA < 189.61){
-            /*OK*/
-            
-            openDoor = true;
-        } else if (totalSA > 189.61 && totalSA <= 485.41){
-            /*OK*/
-            System.out.println("\n"
-                + "\n+--------------------------------------------------+"
-                + "\n|   It wasn't a perfect fit... but with a bit of   |"
-                + "\n|   struggling, you made it stuck.                 |"
-                + "\n|   The door barely opened.                        |"
-                + "\n+--------------------------------------------------+");
-            openDoor = true;
-        } else if (totalSA == 189.61){
-            /*PERFECT*/
-            System.out.println("\n"
-                + "\n+--------------------------------------------------+"
-                + "\n|    The key fitted perfectly! The door opens.     |"
-                + "\n+--------------------------------------------------+");            
-            openDoor = true;
-        } else {
-            System.out.println("\n"
-                + "\n+--------------------------------------------------+"
-                + "\n|  The screen of the 3D printer flashed red,       |"
-                + "\n|  displaying: ERROR - TRY AGAIN                   |"
-                + "\n+--------------------------------------------------+");
-            openDoor = false; 
-        }
-        return openDoor;
-    }
             
     /*RECTANGLE PERIMETER - DOOR CALCULATIONS*/
     public int calcRectanglePer (int length , int height){

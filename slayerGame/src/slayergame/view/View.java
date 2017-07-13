@@ -29,7 +29,7 @@ public abstract class View implements ViewInterface {
     @Override
     public void display() {
         
-        System.out.println();
+        this.console.println();
         boolean done = false;
         try{
         do {
@@ -41,7 +41,7 @@ public abstract class View implements ViewInterface {
             
         } while (!done);
         } catch (Throwable te){
-            System.out.println("Invalid option, please try a VALID input. The game only takes number from 1 to 5.");
+            this.console.println("Invalid option, please try a VALID input. The game only takes number from 1 to 5.");
                     do {
             int menuOption = this.getInput();
             if (menuOption < 1 || menuOption > 5)
@@ -64,20 +64,20 @@ public abstract class View implements ViewInterface {
         String stringChoice = null;
         try{
             while (!valid) {
-                System.out.println(this.displayMessage + "\n\nEnter your choice:");
+                this.console.println(this.displayMessage + "\n\nEnter your choice:");
 
                 stringChoice = this.keyboard.readLine();
                 value = Integer.parseInt(stringChoice);
 
                 if (value < 1 || value > 5) {
-                    System.out.println("*** You must enter a valid option ***");
+                    this.console.println("*** You must enter a valid option ***");
                     continue;
                 }
 
                 break;
             }
         } catch (Exception e){
-            System.out.println("Error reading input: " + e.getMessage());
+            this.console.println("Error reading input: " + e.getMessage());
         }
         
         return value;

@@ -24,17 +24,9 @@ public class MainMenuView extends View {
                 + "\n|            5 - Exit               |"
                 + "\n+-----------------------------------+");
     }
-        
-    private void saveGame() {
-        System.out.println("\n *** saveGame() function called ***");
-    }
-
-    private void loadSavedGame() {
-        System.out.println("\n *** loadSavedGame() function called ***");
-    }
 
     private void displayHelpMenu() {
-        System.out.println("\n"
+        this.console.println("\n"
                 + "\n+--------------------------------------------------+"
                 + "\n| The main goal of the game is for you to survive  |"
                 + "\n| all the obstacles and puzzles thrown at you by   |"

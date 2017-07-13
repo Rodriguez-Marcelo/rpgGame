@@ -21,9 +21,13 @@ public class Narrator extends View {
         
         System.out.println( locationName + "\n" + scenarioDesc + "\n"
                             + scenarioChoices );
-
+    
     }
-
+    
+        public void displayMessage(String a){
+        this.console.println(a);
+    }
+    
     @Override
     public boolean doAction(int value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

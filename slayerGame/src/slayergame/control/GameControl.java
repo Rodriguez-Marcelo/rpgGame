@@ -42,14 +42,14 @@ public class GameControl {
         Game game = new Game();
         SlayerGame.setCurrentGame(game);
         
+        Narrator narrator = new Narrator();
+        
         game.setPlayer(player);
         
         InventoryItem[] inventoryList = GameControl.createInventoryList();
         game.setInventory(inventoryList);
         
-        System.out.println("GOOD LUCK, HAVE FUN!");
-        
-        Narrator narrator = new Narrator();
+        narrator.displayMessage("GOOD LUCK, HAVE FUN!");
         
         ScenarioGenerator scenarioGenerator = new ScenarioGenerator();
         int endExistance=0;
