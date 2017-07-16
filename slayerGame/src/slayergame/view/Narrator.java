@@ -9,6 +9,7 @@ import java.util.Scanner;
 import slayergame.SlayerGame;
 import slayergame.control.GameControl;
 import slayergame.control.ScenarioGenerator;
+import slayergame.exceptions.MovementControlException;
 
 /** Chicho & Cristian **/
 public class Narrator extends View {
@@ -27,7 +28,17 @@ public class Narrator extends View {
         public void displayMessage(String a){
         this.console.println(a);
     }
-    
+        
+        public String getInput1() throws MovementControlException {
+            
+            String stringValue = "";
+            try{
+            stringValue = this.keyboard.readLine();
+            return stringValue;
+            } catch(Exception ex){ErrorView.display(displayMessage, displayMessage);}
+            
+            return stringValue;
+        }
     @Override
     public boolean doAction(int value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

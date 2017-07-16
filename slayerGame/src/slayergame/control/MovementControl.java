@@ -8,6 +8,8 @@ package slayergame.control;
 import java.io.Serializable;
 import slayergame.exceptions.MovementControlException;
 import slayergame.model.DoorBlocker;
+import slayergame.model.Game;
+import slayergame.model.Item;
 import slayergame.view.DoorBlockView;
 import slayergame.view.Narrator;
 
@@ -17,6 +19,7 @@ public class MovementControl implements Serializable{
     public int moveToScenario(int currentLocation, int choice) throws MovementControlException{
         
         int futureLocation;
+        Narrator narrator = new Narrator();
         
         switch (currentLocation){
             case 1:
@@ -26,14 +29,14 @@ public class MovementControl implements Serializable{
                         futureLocation = 2;
                         return futureLocation;
                     case 2:
-                        //Tengo que llamar al inventario y resolucionar cómo se agregan
-                        //los ítems
+                        narrator.displayMessage("Great! You found a RED ID CARD!");
+                        futureLocation = 1;
                         break;
                     case 3:
                         futureLocation = 3;
                         return futureLocation;
                     case 4:
-                        //Death
+                        narrator.displayMessage("Oh uh! Well this is embarrasing. YOU DIED. Try again!");
                         break;
                     case 5:
                         futureLocation = 4;
@@ -59,7 +62,6 @@ public class MovementControl implements Serializable{
                         
                         DoorBlockView doorBlockView = new DoorBlockView();
                         DoorBlockControl doorBlockControl = new DoorBlockControl();
-                        Narrator narrator = new Narrator();
                         narrator.displayMessage(""
                                 + "\nYou see one of those famous 3D printers in the "
                                 + "\nwall next to the door you're attempting to get"

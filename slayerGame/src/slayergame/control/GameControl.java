@@ -10,6 +10,7 @@ import slayergame.model.Game;
 import slayergame.model.InventoryItem;
 import slayergame.model.Item;
 import slayergame.model.Player;
+import slayergame.view.ErrorView;
 import slayergame.view.Narrator;
 
 /** Chicho & Cristian **/
@@ -30,17 +31,12 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-        
-        //Here I create a locationView object, wich will display
-        //where the user is and what are his options.
-        /*
-        ScenarioGenerator scenario = new ScenarioGenerator();
-        scenario.generateScenario(player.getCurrentLocation());
-        */
-        /*ScenarioGenerator.(player.getCurrentLocation());*/
+
         
         Game game = new Game();
         SlayerGame.setCurrentGame(game);
+        
+        InventoryControl inventoryControl = new InventoryControl();
         
         Narrator narrator = new Narrator();
         
@@ -54,13 +50,20 @@ public class GameControl {
         ScenarioGenerator scenarioGenerator = new ScenarioGenerator();
         int endExistance=0;
         for (int i = 0; i < 50 || i == 15; i++){
+            
             scenarioGenerator.generateScenario(player.getCurrentLocation());
+            
             narrator.narrateScenario(scenarioGenerator);
+            
             int choice = narrator.getInput();
+            
+            game = inventoryControl.updateInventory(player.getCurrentLocation(), choice, game);
+            
             endExistance++;
             MovementControl movementControler = new MovementControl();
             try{
             player.setCurrentLocation(movementControler.moveToScenario(player.getCurrentLocation(), choice));
+            
             } catch (MovementControlException me){System.out.println(me.getMessage());
             }
             scenarioGenerator.generateScenario(player.getCurrentLocation());
@@ -69,8 +72,18 @@ public class GameControl {
     }
 
     public static void saveGame(Player player) {
-        System.out.println("\n *** saveGame() function is called ***");
+        
+        Narrator narrator = new Narrator();
+        narrator.displayMessage("\n\n Enter The File path for file where the game is to be saved.");
+        String filePath = "";
+        try{
+        filePath= narrator.getInput1();
+        } catch(Exception ex){ErrorView.display("MainMenuView", ex.getMessage());}
+        
+        
+        
     }
+    
 
     public static void loadSavedGame(Player player) {
         System.out.println("\n *** loadSavedGame() function is called ***");
