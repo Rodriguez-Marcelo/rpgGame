@@ -14,6 +14,7 @@ public class Weapon implements Serializable{
     private int strenghtReq;
     private int additionalDamage;
 
+
     public Weapon() {
     }
 

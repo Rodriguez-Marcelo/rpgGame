@@ -5,6 +5,7 @@
  */
 package slayergame.view;
 
+import java.io.IOException;
 import java.util.Scanner;
 import slayergame.control.GameControl;
 import slayergame.exceptions.StartProgramViewExceptions;
@@ -81,7 +82,7 @@ public class StartProgramView extends View{
             
             break;
         }
-        } catch (Exception e){System.out.println("Error reading input: " + e.getMessage());}
+        } catch (IOException e){System.out.println("Error reading input: " + e.getMessage());}
         return value;
         
     }   
@@ -109,7 +110,7 @@ public class StartProgramView extends View{
 
     private void displayNextView(Player player) {
         System.out.println("\n============================================"
-                         + "\n Welcome to the wolrd of Kchymera, " + player.getName()
+                         + "\n Welcome to the world of Kchymera, " + player.getName()
                          + "\n Take care, and carefull where you step!"
                          + "\n============================================"
                          );
