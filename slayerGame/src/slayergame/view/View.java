@@ -69,7 +69,7 @@ public abstract class View implements ViewInterface {
                 stringChoice = this.keyboard.readLine();
                 value = Integer.parseInt(stringChoice);
 
-                if (value < 1 || value > 5) {
+                if (value < 1 || value > 6) {
                     this.console.println("*** You must enter a valid option ***");
                     continue;
                 }
@@ -84,7 +84,34 @@ public abstract class View implements ViewInterface {
         
     }   
     
-     
+    public String getInput2() {
+        
+        if (this.displayMessage == null){this.displayMessage = ("");}
+        
+
+        boolean valid = false;
+        String value = "";
+        try{
+            while (!valid) {
+                this.console.println(this.displayMessage + "\n\nEnter your choice:");
+
+                value = this.keyboard.readLine();
+
+
+                if (value.length() < 1 ) {
+                    this.console.println("*** You must enter a valid option ***");
+                    continue;
+                }
+
+                break;
+            }
+        } catch (Exception e){
+            this.console.println("Error reading input: " + e.getMessage());
+        }
+        
+        return value;
+        
+    }    
     
      
      

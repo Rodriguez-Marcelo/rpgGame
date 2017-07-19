@@ -30,7 +30,6 @@ public class MovementControl implements Serializable{
                         return futureLocation;
                     case 2:
                         narrator.displayMessage("Great! You found a RED ID CARD!");
-                        futureLocation = 1;
                         break;
                     case 3:
                         futureLocation = 3;

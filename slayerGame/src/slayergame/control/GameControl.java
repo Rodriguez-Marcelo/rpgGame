@@ -4,7 +4,11 @@
  * and open the template in the editor.
  */
 package slayergame.control;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import slayergame.SlayerGame;
+import slayergame.exceptions.GameControlExceptions;
 import slayergame.exceptions.MovementControlException;
 import slayergame.model.Game;
 import slayergame.model.InventoryItem;
@@ -30,7 +34,7 @@ public class GameControl {
         return player;
     }
 
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player){
 
         
         Game game = new Game();
@@ -49,12 +53,13 @@ public class GameControl {
         
         ScenarioGenerator scenarioGenerator = new ScenarioGenerator();
         int endExistance=0;
-        for (int i = 0; i < 50 || i == 15; i++){
+        for (int i = 0; i < 40; i++){
             
             scenarioGenerator.generateScenario(player.getCurrentLocation());
             
             narrator.narrateScenario(scenarioGenerator);
-            
+            narrator.displayMessage("\nOr enter zero '6' for the ingame menu...");
+
             int choice = narrator.getInput();
             
             game = inventoryControl.updateInventory(player.getCurrentLocation(), choice, game);
@@ -71,23 +76,10 @@ public class GameControl {
         
     }
 
-    public static void saveGame(Player player) {
-        
-        Narrator narrator = new Narrator();
-        narrator.displayMessage("\n\n Enter The File path for file where the game is to be saved.");
-        String filePath = "";
-        try{
-        filePath= narrator.getInput1();
-        } catch(Exception ex){ErrorView.display("MainMenuView", ex.getMessage());}
-        
-        
-        
-    }
-    
-
     public static void loadSavedGame(Player player) {
         System.out.println("\n *** loadSavedGame() function is called ***");
     }
+   
 
     public static InventoryItem[] createInventoryList() {
         InventoryItem[] inventory = new InventoryItem[5];
@@ -119,6 +111,14 @@ public class GameControl {
         
         return inventory;
     }
-
     
+    public static void saveGame(Game game, String filepath) throws GameControlExceptions, IOException{
+            try( FileOutputStream fops = new FileOutputStream(filepath)){
+                ObjectOutputStream output = new ObjectOutputStream(fops);
+                
+                output.writeObject(game);
+            } catch (Exception e){
+                throw new GameControlExceptions(e.getMessage());
+            }
+    }
 }

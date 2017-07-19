@@ -109,7 +109,7 @@ public class StartProgramView extends View{
 
     private void displayNextView(Player player) {
         System.out.println("\n============================================"
-                         + "\n Welcome to the wolrd of Kchymera, " + player.getName()
+                         + "\n Welcome to the world of Kchymera, " + player.getName()
                          + "\n Take care, and carefull where you step!"
                          + "\n============================================"
                          );

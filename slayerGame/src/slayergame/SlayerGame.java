@@ -43,7 +43,7 @@ public class SlayerGame {
     private static PrintWriter logFile = null;
     
     
-    public static void main(String[] args) throws StartProgramViewExceptions {
+    public static void main(String[] args) {
         
         
         try{

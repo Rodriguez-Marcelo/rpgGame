@@ -5,9 +5,12 @@
  */
 package slayergame.view;
 
+import java.io.IOException;
 import java.util.Scanner;
 import slayergame.SlayerGame;
 import slayergame.control.GameControl;
+import slayergame.exceptions.GameControlExceptions;
+import slayergame.model.Game;
 
 /** Chicho & Cristian **/
 public class MainMenuView extends View {
@@ -18,10 +21,9 @@ public class MainMenuView extends View {
                 + "\n|             Main Menu             |"
                 + "\n+-----------------------------------+"
                 + "\n|            1 - New Game           |"
-                + "\n|            2 - Save Game          |"
-                + "\n|            3 - Load Game          |"
-                + "\n|            4 - How to play        |"
-                + "\n|            5 - Exit               |"
+                + "\n|            2 - Load Game          |"
+                + "\n|            3 - How to play        |"
+                + "\n|            4 - Exit               |"
                 + "\n+-----------------------------------+");
     }
 
@@ -51,13 +53,12 @@ public class MainMenuView extends View {
 
     @Override
     public boolean doAction(int choice) {
-        
         switch (choice) {
             case 1:
                 GameControl.createNewGame(SlayerGame.getPlayer());
                 break;
             case 2:
-                GameControl.saveGame(SlayerGame.getPlayer());
+                this.saveGame();
                 break;
             case 3:
                 GameControl.loadSavedGame(SlayerGame.getPlayer());
@@ -67,12 +68,35 @@ public class MainMenuView extends View {
                 break;
             case 5:
                 break;
+            case 6:
+                Narrator narrator = new Narrator();
+                narrator.displayMessage("" 
+                + "\n+-----------------------------------+" 
+                + "\n|             Main Menu             |" 
+                + "\n+-----------------------------------+" 
+                + "\n|           10 - New Game           |" 
+                + "\n|           20 - Save Game          |" 
+                + "\n|           30 - Load Game          |" 
+                + "\n|           40 - How to play        |" 
+                + "\n|           50 - Exit               |" 
+                + "\n+-----------------------------------+");
+                choice = narrator.getInput();
+                narrator.doAction(choice);    
             default:
                 System.out.println("\n*** Invalid selection, please try again ***");
         }
-        
-        
         return true;
     }
     
+    private void saveGame(){
+        this.console.println("\n\nEnter File Path for save:");
+        
+        String filePath = this.getInput2();
+        
+        try {
+            GameControl.saveGame(SlayerGame.getCurrentGame(), filePath);
+        }catch (Exception ex){
+            ErrorView.display("MainMenuView", displayMessage);
+        }
+    }
 }
