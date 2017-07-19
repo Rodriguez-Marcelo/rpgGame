@@ -12,6 +12,7 @@ import slayergame.exceptions.GameControlExceptions;
 import slayergame.exceptions.MovementControlException;
 import slayergame.model.Game;
 import slayergame.model.InventoryItem;
+import slayergame.model.Guns;
 import slayergame.model.Item;
 import slayergame.model.Player;
 import slayergame.view.ErrorView;

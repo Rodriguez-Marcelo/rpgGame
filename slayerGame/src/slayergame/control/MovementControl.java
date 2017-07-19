@@ -9,7 +9,7 @@ import java.io.Serializable;
 import slayergame.exceptions.MovementControlException;
 import slayergame.model.DoorBlocker;
 import slayergame.model.Game;
-import slayergame.model.Item;
+import slayergame.model.Guns;
 import slayergame.view.DoorBlockView;
 import slayergame.view.Narrator;
 

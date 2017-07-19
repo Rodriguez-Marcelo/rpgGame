@@ -22,7 +22,7 @@ import slayergame.model.DoorBlocker;
 import slayergame.model.Enemy;
 import slayergame.model.Game;
 import slayergame.model.Inventory;
-import slayergame.model.Item;
+import slayergame.model.Guns;
 import slayergame.model.NPC;
 import slayergame.model.Player;
 import slayergame.model.Room;
@@ -63,7 +63,7 @@ public class SlayerGame {
             System.out.println("Exception: " + e.toString() +
                                "\nCause: " + e.getCause() +
                                "\nMessage: " + e.getMessage());
-            
+                               
 
             
         }

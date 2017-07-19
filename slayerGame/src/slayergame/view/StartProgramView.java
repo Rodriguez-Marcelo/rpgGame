@@ -5,6 +5,7 @@
  */
 package slayergame.view;
 
+import java.io.IOException;
 import java.util.Scanner;
 import slayergame.control.GameControl;
 import slayergame.exceptions.StartProgramViewExceptions;
@@ -81,7 +82,7 @@ public class StartProgramView extends View{
             
             break;
         }
-        } catch (Exception e){System.out.println("Error reading input: " + e.getMessage());}
+        } catch (IOException e){System.out.println("Error reading input: " + e.getMessage());}
         return value;
         
     }   

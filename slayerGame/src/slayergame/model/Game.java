@@ -11,6 +11,7 @@ public class Game {
     public Player player;
     public DoorBlocker doorBlock1, doorBlock2, doorblock3;
     public InventoryItem[] inventory;
+    public FirearmsItem [] firearms;
 
     public Player getPlayer() {
         return player;
@@ -52,4 +53,11 @@ public class Game {
         this.inventory = inventory;
     }
     
+    public FirearmsItem[] getFirearms() {
+        return firearms;
+    }
+
+    public void setFirearms(FirearmsItem[] firearms) {
+        this.firearms = firearms;
+    }
 }
