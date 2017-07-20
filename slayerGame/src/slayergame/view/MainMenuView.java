@@ -21,9 +21,10 @@ public class MainMenuView extends View {
                 + "\n|             Main Menu             |"
                 + "\n+-----------------------------------+"
                 + "\n|            1 - New Game           |"
-                + "\n|            2 - Load Game          |"
-                + "\n|            3 - How to play        |"
-                + "\n|            4 - Exit               |"
+                + "\n|            2 - Save Game          |"
+                + "\n|            3 - Load Game          |"
+                + "\n|            4 - How to play        |"
+                + "\n|            5 - Exit               |"
                 + "\n+-----------------------------------+");
     }
 
